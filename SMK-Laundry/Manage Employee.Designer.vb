@@ -31,7 +31,7 @@ Partial Class Manage_Employee
         Me.search_box = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.datagrid_view = New System.Windows.Forms.DataGridView()
         Me.LaundryDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LaundryDataSet = New SMK_Laundry.LaundryDataSet()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -55,7 +55,7 @@ Partial Class Manage_Employee
         Me.reset_btn = New System.Windows.Forms.Button()
         Me.submit_btn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaundryDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaundryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -149,17 +149,19 @@ Partial Class Manage_Employee
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Manage Employee"
         '
-        'DataGridView1
+        'datagrid_view
         '
-        Me.DataGridView1.AutoGenerateColumns = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.DataSource = Me.LaundryDataSetBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(-8, 149)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1203, 239)
-        Me.DataGridView1.TabIndex = 13
+        Me.datagrid_view.AllowUserToAddRows = False
+        Me.datagrid_view.AllowUserToDeleteRows = False
+        Me.datagrid_view.AutoGenerateColumns = False
+        Me.datagrid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.datagrid_view.DataSource = Me.LaundryDataSetBindingSource
+        Me.datagrid_view.Location = New System.Drawing.Point(-8, 149)
+        Me.datagrid_view.Name = "datagrid_view"
+        Me.datagrid_view.RowHeadersWidth = 51
+        Me.datagrid_view.RowTemplate.Height = 24
+        Me.datagrid_view.Size = New System.Drawing.Size(1203, 239)
+        Me.datagrid_view.TabIndex = 13
         '
         'LaundryDataSetBindingSource
         '
@@ -384,7 +386,7 @@ Partial Class Manage_Employee
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.datagrid_view)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label2)
@@ -395,7 +397,7 @@ Partial Class Manage_Employee
         Me.Text = "Manage Employee"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LaundryDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LaundryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -409,7 +411,7 @@ Partial Class Manage_Employee
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label3 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents datagrid_view As DataGridView
     Friend WithEvents LaundryDataSetBindingSource As BindingSource
     Friend WithEvents LaundryDataSet As LaundryDataSet
     Friend WithEvents search_box As TextBox

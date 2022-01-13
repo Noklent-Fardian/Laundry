@@ -16,6 +16,8 @@ Public Class Manage_Employee
         edit_btn.Text = "Edit"
         edit_btn.Name = "Edit"
         edit_btn.flatstyle = FlatStyle.Flat
+        edit_btn.UseColumnTextForButtonValue = True
+        datagrid_view.Columns.Add(edit_btn)
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MainMenu.Show()
@@ -30,7 +32,7 @@ Public Class Manage_Employee
 
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
 
     End Sub
 End Class
