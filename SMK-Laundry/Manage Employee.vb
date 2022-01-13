@@ -9,7 +9,17 @@ Public Class Manage_Employee
         conn = New SqlConnection("Source=NOX; Database=Laundry; Integrated Security= True")
         If conn.State = ConnectionState.Closed Then conn.Open()
     End Sub
-
+    Sub kosong()
+        name_box.Text = ""
+        email_box.Text = ""
+        password_box.Text = ""
+        confirm_box.Text = ""
+        RichTextBox1.Text = ""
+        phone_box.Text = ""
+        DateTimePicker1.Value = Today
+        ComboBox1.Text = ""
+        salary_box.Text = ""
+    End Sub
     Sub addbtn()
         Dim edit_btn, delete_btn As New DataGridViewColumn
         edit_btn.HeaderText = "Edit"
