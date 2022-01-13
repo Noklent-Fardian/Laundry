@@ -1,0 +1,271 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SMK-Laundry
+</name>
+</assembly>
+<members>
+<member name="T:SMK_Laundry.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:SMK_Laundry.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:SMK_Laundry.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.categoryDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.customerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.detail_packageDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.detail_transactionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.employeeDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.header_transactionDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.jobDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.packageDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.serviceDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.unitDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.categoryRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.customerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.detail_packageRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.detail_transactionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.employeeRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.header_transactionRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.jobRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.packageRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.serviceRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.unitRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.categoryRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.customerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.detail_packageRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.detail_transactionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.employeeRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.header_transactionRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.jobRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.packageRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.serviceRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSet.unitRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.categoryTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.customerTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.detail_packageTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.detail_transactionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.employeeTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.header_transactionTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.jobTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.packageTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.serviceTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.unitTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:SMK_Laundry.LaundryDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(SMK_Laundry.LaundryDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:SMK_Laundry.LaundryDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(SMK_Laundry.LaundryDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:SMK_Laundry.LaundryDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(SMK_Laundry.LaundryDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:SMK_Laundry.LaundryDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:SMK_Laundry.LaundryDataSetTableAdapters.TableAdapterManager.UpdateAll(SMK_Laundry.LaundryDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:SMK_Laundry.LaundryDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>

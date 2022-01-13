@@ -1,0 +1,16 @@
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.vbproj.AssemblyReference.cache
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.vbproj.SuggestedBindingRedirects.cache
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Login.resources
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Resources.resources
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.vbproj.GenerateResource.cache
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.vbproj.CoreCompileInputs.cache
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\bin\Debug\SMK-Laundry.exe.config
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\bin\Debug\SMK-Laundry.exe
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\bin\Debug\SMK-Laundry.pdb
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\bin\Debug\SMK-Laundry.xml
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.exe
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.xml
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.pdb
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Register.resources
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.MainMenu.resources
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Manage_Employee.resources
