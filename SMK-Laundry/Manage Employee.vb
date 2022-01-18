@@ -30,14 +30,14 @@ Public Class Manage_Employee
         datagrid_view.Columns.RemoveAt(8)
     End Sub
     Sub jobtitle()
-        query = "select * From job"
+        query = "select * from job order by name_job"
         ComboBox1.DataSource = read(query)
         ComboBox1.ValueMember = "name_job"
         ComboBox1.DisplayMember = "name_job"
 
     End Sub
     Sub kondisiawal()
-        query = "Select a.id,a.name_employee,a.id_job,a.email_employee,a.addres_employee,a.phone_number_employee,a.date_of_birth_employee ,a.salary_employee from Employee a, job b where a.id_job=b.id"
+        query = "Select a.id,a.name_employee,b.name_job,a.email_employee,a.addres_employee,a.phone_number_employee,a.date_of_birth_employee,a.salary_employee from employee a, job b where a.id_job=b.id"
         datagrid_view.DataSource = read(query)
         Call addbtn()
         Call kosong()

@@ -64,4 +64,39 @@ Public Class Customer
         e.Handled = CBool(kunci)
 
     End Sub
+
+    Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
+        If e.ColumnIndex = 4 Then
+            id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
+            name_box.Text = datagrid_view.CurrentRow.Cells(1).Value
+            phone_box.Text = datagrid_view.CurrentRow.Cells(2).Value
+            RichTextBox1.Text = datagrid_view.CurrentRow.Cells(3).Value
+        ElseIf e.ColumnIndex = 5 Then
+            id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
+            If MessageBox.Show("Yakin mau hapus data", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                query = "Delete  customer where id='" & id_box.Text & "'"
+                aksi(query)
+                MsgBox("Hapusdata Berhasil", MsgBoxStyle.Information, "Berhasil")
+                Call removebtn()
+                Call kondisiawal()
+            Else
+
+                MsgBox("Hapus data gagal", MsgBoxStyle.Critical, "Gagal")
+                Call removebtn()
+                Call kondisiawal()
+            End If
+        End If
+    End Sub
+
+    Private Sub search_box_keypress(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
+        If e.KeyChar = Chr(13) Then
+            query = "select from customer where id like '%" & search_box.Text & "%' or name_customer like '%" & search_box.Text & "%'"
+            datagrid_view.AutoGenerateColumns = True
+            datagrid_view.DataSource = read(query)
+            Call add_btn()
+
+
+        End If
+
+    End Sub
 End Class
