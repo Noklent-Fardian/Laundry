@@ -184,7 +184,7 @@ Public Class Manage_Service
     Private Sub search_box_keypress(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
         If e.KeyChar = Chr(13) Then
             Call remove_btn()
-            query = " Select a.id, a.name_service , b.name_unit , c.name_category ,a.price_unit_service , a.estimation_duration_service from service a, unit b, category c where a.id_unit=b.id and a.id_category=c.id and a.name_service like '%" & search_box.Text & "%'"
+            query = " Select a.id, a.name_service , b.name_unit , c.name_category ,a.price_unit_service , a.estimation_duration_service from service a, unit b, category c where a.id_unit=b.id and a.id_category=c.id and a.id like '%" & search_box.Text & "%' or a.name_service like '%" & search_box.Text & "%'"
             datagrid_view.AutoGenerateColumns = True
             datagrid_view.DataSource = read(query)
             Call addbtn()
