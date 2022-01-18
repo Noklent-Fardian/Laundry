@@ -30,6 +30,7 @@ Partial Class Manage_Service
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.refresh_btn = New System.Windows.Forms.Button()
         Me.search_box = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -50,7 +51,6 @@ Partial Class Manage_Service
         Me.duration_box = New System.Windows.Forms.TextBox()
         Me.id_box = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.refresh_btn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -113,6 +113,16 @@ Partial Class Manage_Service
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1413, 103)
         Me.Panel1.TabIndex = 17
+        '
+        'refresh_btn
+        '
+        Me.refresh_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.refresh_btn.Location = New System.Drawing.Point(89, 32)
+        Me.refresh_btn.Name = "refresh_btn"
+        Me.refresh_btn.Size = New System.Drawing.Size(97, 35)
+        Me.refresh_btn.TabIndex = 43
+        Me.refresh_btn.Text = "Refresh"
+        Me.refresh_btn.UseVisualStyleBackColor = True
         '
         'search_box
         '
@@ -345,16 +355,6 @@ Partial Class Manage_Service
         Me.Label5.Size = New System.Drawing.Size(99, 25)
         Me.Label5.TabIndex = 81
         Me.Label5.Text = "Service Id"
-        '
-        'refresh_btn
-        '
-        Me.refresh_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.refresh_btn.Location = New System.Drawing.Point(89, 32)
-        Me.refresh_btn.Name = "refresh_btn"
-        Me.refresh_btn.Size = New System.Drawing.Size(97, 35)
-        Me.refresh_btn.TabIndex = 43
-        Me.refresh_btn.Text = "Refresh"
-        Me.refresh_btn.UseVisualStyleBackColor = True
         '
         'Manage_Service
         '
