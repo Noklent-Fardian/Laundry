@@ -13,6 +13,7 @@
             Manage_Employee.Label2.Text = "Hello  " + nama
             Manage_Package.Label2.Text = "Hello  " + nama
             Manage_Service.Label2.Text = "Hello  " + nama
+            Customer.Label2.Text = "Hello     " + nama
 
             Me.Hide()
 
