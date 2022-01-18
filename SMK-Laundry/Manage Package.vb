@@ -3,7 +3,36 @@ Public Class Manage_Package
     Dim conn As SqlConnection
     Dim dr As SqlDataReader
     Dim cmd As SqlCommand
-    Dim query, id
+    Dim query, id_Service As String
+
+    Sub koneksi()
+        conn = New SqlConnection("Server=NOX; Database=Laundry; Integrated Security=True")
+        If conn.State = ConnectionState.Closed Then conn.Open()
+    End Sub
+    Sub kosong()
+        id_box.Text = ""
+        total_box.Text = ""
+        price_box.Text = ""
+    End Sub
+    Sub addbtn()
+        Dim edit_btn, delete_btn As New DataGridViewButtonColumn
+
+        edit_btn.HeaderText = "Edit"
+        edit_btn.Text = "Edit"
+        edit_btn.Name = "Edit"
+        edit_btn.FlatStyle = True
+        edit_btn.UseColumnTextForButtonValue = True
+        datagrid_view.Columns.Add(edit_btn)
+        delete_btn.HeaderText = "Delete"
+        delete_btn.Text = "Delete"
+        delete_btn.Name = "Delete"
+        delete_btn.FlatStyle = True
+        delete_btn.UseColumnTextForButtonValue = True
+        datagrid_view.Columns.Add(delete_btn)
+    End Sub
+    Sub kondisiawal()
+        query = ("")
+    End Sub
     Private Sub Manage_Package_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub

@@ -31,6 +31,7 @@ Partial Class MainMenu
         Me.employee_btn = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -41,7 +42,7 @@ Partial Class MainMenu
         Me.Panel1.Location = New System.Drawing.Point(0, 87)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1165, 103)
+        Me.Panel1.Size = New System.Drawing.Size(1274, 103)
         Me.Panel1.TabIndex = 7
         '
         'Label3
@@ -49,7 +50,7 @@ Partial Class MainMenu
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(447, 28)
+        Me.Label3.Location = New System.Drawing.Point(538, 20)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(203, 42)
@@ -62,7 +63,7 @@ Partial Class MainMenu
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Button1.Location = New System.Drawing.Point(1030, 21)
+        Me.Button1.Location = New System.Drawing.Point(1138, 26)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 41)
@@ -75,7 +76,7 @@ Partial Class MainMenu
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(891, 26)
+        Me.Label2.Location = New System.Drawing.Point(960, 27)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 25)
@@ -84,7 +85,7 @@ Partial Class MainMenu
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(411, 21)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(496, 21)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(313, 22)
@@ -105,7 +106,7 @@ Partial Class MainMenu
         'employee_btn
         '
         Me.employee_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.employee_btn.Location = New System.Drawing.Point(61, 232)
+        Me.employee_btn.Location = New System.Drawing.Point(28, 232)
         Me.employee_btn.Name = "employee_btn"
         Me.employee_btn.Size = New System.Drawing.Size(264, 145)
         Me.employee_btn.TabIndex = 8
@@ -115,7 +116,7 @@ Partial Class MainMenu
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(822, 232)
+        Me.Button3.Location = New System.Drawing.Point(661, 232)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(264, 145)
         Me.Button3.TabIndex = 9
@@ -125,19 +126,30 @@ Partial Class MainMenu
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(440, 232)
+        Me.Button2.Location = New System.Drawing.Point(338, 232)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(264, 145)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "Manage Service"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(988, 232)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(264, 145)
+        Me.Button4.TabIndex = 11
+        Me.Button4.Text = "List Customer"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSeaGreen
-        Me.ClientSize = New System.Drawing.Size(1161, 712)
+        Me.ClientSize = New System.Drawing.Size(1277, 712)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.employee_btn)
@@ -164,4 +176,5 @@ Partial Class MainMenu
     Friend WithEvents employee_btn As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button4 As Button
 End Class

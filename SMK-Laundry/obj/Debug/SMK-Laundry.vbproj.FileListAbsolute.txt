@@ -16,3 +16,4 @@ C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.MainMe
 C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Manage_Employee.resources
 C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Manage_Package.resources
 C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Manage_Service.resources
+C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Customer.resources
