@@ -59,6 +59,7 @@ Partial Class Manage_Employee
         Me.id_box = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.datagrid_view = New System.Windows.Forms.DataGridView()
+        Me.refresh_btn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.LaundryDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LaundryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +115,7 @@ Partial Class Manage_Employee
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel1.Controls.Add(Me.refresh_btn)
         Me.Panel1.Controls.Add(Me.search_box)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -402,6 +404,16 @@ Partial Class Manage_Employee
         Me.datagrid_view.Size = New System.Drawing.Size(1410, 222)
         Me.datagrid_view.TabIndex = 13
         '
+        'refresh_btn
+        '
+        Me.refresh_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.refresh_btn.Location = New System.Drawing.Point(113, 25)
+        Me.refresh_btn.Name = "refresh_btn"
+        Me.refresh_btn.Size = New System.Drawing.Size(97, 35)
+        Me.refresh_btn.TabIndex = 42
+        Me.refresh_btn.Text = "Refresh"
+        Me.refresh_btn.UseVisualStyleBackColor = True
+        '
         'Manage_Employee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -482,4 +494,5 @@ Partial Class Manage_Employee
     Friend WithEvents id_box As TextBox
     Friend WithEvents Label14 As Label
     Friend WithEvents datagrid_view As DataGridView
+    Friend WithEvents refresh_btn As Button
 End Class

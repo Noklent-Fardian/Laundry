@@ -126,15 +126,7 @@ Public Class Manage_Employee
     End Sub
 
     Private Sub reset_btn_Click(sender As Object, e As EventArgs) Handles reset_btn.Click
-        id_box.Text = ""
-        name_box.Text = ""
-        email_box.Text = ""
-        password_box.Text = ""
-        confirm_box.Text = ""
-        RichTextBox1.Text = ""
-        phone_box.Text = ""
-        DateTimePicker1.Value = Today
-        salary_box.Text = ""
+        Call kosong()
     End Sub
 
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
@@ -167,13 +159,26 @@ Public Class Manage_Employee
 
     End Sub
 
+
+
+    Private Sub search_box_TextChanged(sender As Object, e As EventArgs) Handles search_box.TextChanged
+
+    End Sub
+
+    Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
+        Call remove_bt()
+        Call kondisiawal()
+
+    End Sub
+
     Private Sub search_box_keypress(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
         If e.KeyChar = Chr(13) Then
             Call remove_bt()
-            query = "Select a.id,a.name_employee,a.id_job,a.email_employee,a.addres_employee,a.phone_number_employee,a.date_of_birth_employee ,a.salary_employee from employee a, job b where a.id_job=b.id and a.name_employee like  '%" & search_box.Text & "%'"
+            query = "Select a.id,a.name_employee,a.id_job,a.email_employee,a.addres_employee,a.phone_number_employee,a.date_of_birth_employee ,a.salary_employee from employee a, job b where a.id_job=b.id and a.id like '%" & search_box.Text & "%' or a.name_employee like '%" & search_box.Text & "%'"
             datagrid_view.AutoGenerateColumns = True
             datagrid_view.DataSource = read(query)
             Call addbtn()
+
         End If
 
 

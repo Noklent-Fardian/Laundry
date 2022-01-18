@@ -77,6 +77,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manage Service.Designer.vb">
+      <DependentUpon>Manage Service.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Manage Service.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Manage Package.Designer.vb">
       <DependentUpon>Manage Package.vb</DependentUpon>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Manage Service.resx">
+      <DependentUpon>Manage Service.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manage Package.resx">
       <DependentUpon>Manage Package.vb</DependentUpon>
     </EmbeddedResource>
