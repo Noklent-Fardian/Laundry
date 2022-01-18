@@ -9,8 +9,13 @@
         Me.Hide()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Manage_Package.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button2_Click_(sender As Object, e As EventArgs) Handles Button2.Click
+        Manage_Service.Show()
         Me.Hide()
     End Sub
 End Class

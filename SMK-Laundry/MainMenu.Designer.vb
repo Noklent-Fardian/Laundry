@@ -29,6 +29,7 @@ Partial Class MainMenu
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.employee_btn = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -111,14 +112,24 @@ Partial Class MainMenu
         Me.employee_btn.Text = "Manage Employee"
         Me.employee_btn.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(822, 232)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(264, 145)
+        Me.Button3.TabIndex = 9
+        Me.Button3.Text = "Manage Package"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(411, 232)
+        Me.Button2.Location = New System.Drawing.Point(440, 232)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(264, 145)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Manage Package"
+        Me.Button2.TabIndex = 10
+        Me.Button2.Text = "Manage Service"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'MainMenu
@@ -128,6 +139,7 @@ Partial Class MainMenu
         Me.BackColor = System.Drawing.Color.LightSeaGreen
         Me.ClientSize = New System.Drawing.Size(1161, 712)
         Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.employee_btn)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DateTimePicker1)
@@ -150,5 +162,6 @@ Partial Class MainMenu
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents employee_btn As Button
+    Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
 End Class

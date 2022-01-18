@@ -10,8 +10,9 @@
             MsgBox("Selamat Datang  " + nama, MsgBoxStyle.Information, "Succes")
             MainMenu.Show()
             MainMenu.Label2.Text = "Hello" + nama
-            Manage_Employee.Label2.Text = "Hello" + nama
-            Manage_Package.Label2.Text = "Hello" + nama
+            Manage_Employee.Label2.Text = "Hello  " + nama
+            Manage_Package.Label2.Text = "Hello  " + nama
+            Manage_Service.Label2.Text = "Hello  " + nama
 
             Me.Hide()
 
