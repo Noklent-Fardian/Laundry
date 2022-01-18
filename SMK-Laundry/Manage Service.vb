@@ -13,8 +13,6 @@ Public Class Manage_Service
     Sub kosongkandata()
         id_box.Text = ""
         name_box.Text = ""
-        category_select.Text = ""
-        unit_select.Text = ""
         price_box.Text = ""
         duration_box.Text = ""
 
@@ -128,8 +126,8 @@ Public Class Manage_Service
                 query = "delete service where id='" & id_box.Text & "'"
                 aksi(query)
                 MsgBox("Berhasil hapus data", MsgBoxStyle.Information, "Information")
-                Call kondisiawal()
                 Call remove_btn()
+                Call kondisiawal()
             Else
                 MsgBox("Gagal hapus data", MsgBoxStyle.Critical, "Gagal")
                 Call remove_btn()
@@ -153,6 +151,34 @@ Public Class Manage_Service
     Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
         Call remove_btn()
         Call kondisiawal()
+    End Sub
+
+    Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
+        If name_box.Text = "" Or
+                unit_select.Text = "" Or
+                category_select.Text = "" Or
+                price_box.Text = "" Or
+                duration_box.Text = "" Then
+            MsgBox("Isi semua Kolom", MsgBoxStyle.Information, "Belum lengkap")
+        ElseIf id_box.Text = "" Then
+            query = "Insert into service (name_service,id_unit,id_category,price_unit_service,estimation_duration_service) values('{0}','{1}','{2}','{3}','{4}')"
+            query = String.Format(query, name_box.Text, id_unit, id_category, price_box.Text, duration_box.Text)
+            aksi(query)
+            MsgBox("Input Data Berhasil", MsgBoxStyle.Information, "Berhasil")
+            Call remove_btn()
+            Call kondisiawal()
+
+        Else
+            query = " Update service set name_service='" & name_box.Text & "',id_unit='" & id_unit & "',id_category='" & id_category & "',price_unit_service='" & price_box.Text & "',estimation_duration_service='" & duration_box.Text & "' where id='" & id_box.Text & "'"
+            aksi(query)
+            MsgBox("Update Data Employee Berhasil!", MsgBoxStyle.Information, "Information")
+            Call remove_btn()
+            Call kondisiawal()
+
+
+
+        End If
+
     End Sub
 
     Private Sub search_box_keypress(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
