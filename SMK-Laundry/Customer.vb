@@ -64,16 +64,17 @@ Public Class Customer
         e.Handled = CBool(kunci)
 
     End Sub
-
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
         If e.ColumnIndex = 4 Then
+
             id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
             name_box.Text = datagrid_view.CurrentRow.Cells(1).Value
             phone_box.Text = datagrid_view.CurrentRow.Cells(2).Value
             RichTextBox1.Text = datagrid_view.CurrentRow.Cells(3).Value
+
         ElseIf e.ColumnIndex = 5 Then
             id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
-            If MessageBox.Show("Yakin mau hapus data", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            If MessageBox.Show("Yakin mau hapus data  " + datagrid_view.CurrentRow.Cells(1).Value, "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 query = "Delete  customer where id='" & id_box.Text & "'"
                 aksi(query)
                 MsgBox("Hapusdata Berhasil", MsgBoxStyle.Information, "Berhasil")
@@ -123,5 +124,9 @@ Public Class Customer
             Call kondisiawal()
 
         End If
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class
