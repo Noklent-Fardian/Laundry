@@ -141,7 +141,7 @@ Public Class Manage_Employee
             salary_box.Text = datagrid_view.CurrentRow.Cells(7).Value
         ElseIf e.ColumnIndex = 9 Then
             id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
-            If MessageBox.Show("Yakin Mau Hapus", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
+            If MessageBox.Show("Yakin Mau Hapus  " + datagrid_view.CurrentRow.Cells(1).Value, "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = DialogResult.Yes Then
                 query = "delete from employee where id='" & id_box.Text & "'"
                 aksi(query)
                 MsgBox("Data Berhasil Dihapus", MsgBoxStyle.Information, "Sukses")

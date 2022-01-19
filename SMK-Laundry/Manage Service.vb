@@ -122,7 +122,7 @@ Public Class Manage_Service
             duration_box.Text = datagrid_view.CurrentRow.Cells(5).Value
         ElseIf e.ColumnIndex = 7 Then
             id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
-            If MessageBox.Show("Yakin mau dihapus?", "warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            If MessageBox.Show("Yakin mau hapus " + datagrid_view.CurrentRow.Cells(1).Value, "warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 query = "delete service where id='" & id_box.Text & "'"
                 aksi(query)
                 MsgBox("Berhasil hapus data", MsgBoxStyle.Information, "Information")

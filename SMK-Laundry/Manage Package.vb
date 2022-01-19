@@ -31,7 +31,7 @@ Public Class Manage_Package
         datagrid_view.Columns.Add(delete_btn)
     End Sub
     Sub kondisiawal()
-        query = ("")
+        query = ("select a.id, a.name_package,b.name_service,a.t")
     End Sub
     Private Sub Manage_Package_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
