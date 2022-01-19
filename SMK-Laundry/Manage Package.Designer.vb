@@ -194,7 +194,7 @@ Partial Class Manage_Package
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(58, 515)
+        Me.Label7.Location = New System.Drawing.Point(58, 508)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(94, 29)
         Me.Label7.TabIndex = 17
@@ -236,7 +236,7 @@ Partial Class Manage_Package
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(232, 522)
+        Me.ComboBox1.Location = New System.Drawing.Point(232, 515)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(284, 24)
         Me.ComboBox1.TabIndex = 22
