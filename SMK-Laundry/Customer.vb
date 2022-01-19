@@ -89,8 +89,11 @@ Public Class Customer
     End Sub
 
     Private Sub search_box_keypress(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
+
         If e.KeyChar = Chr(13) Then
-            query = "select from customer where id like '%" & search_box.Text & "%' or name_customer like '%" & search_box.Text & "%'"
+            Call removebtn()
+
+            query = "select id,name_customer,phone_number_customer,addres_customer from customer where id like '%" & search_box.Text & "%' or name_customer like '%" & search_box.Text & "%'"
             datagrid_view.AutoGenerateColumns = True
             datagrid_view.DataSource = read(query)
             Call add_btn()
@@ -98,5 +101,27 @@ Public Class Customer
 
         End If
 
+    End Sub
+
+    Private Sub submit_btn_Click(sender As Object, e As EventArgs) Handles submit_btn.Click
+        If name_box.Text = "" Or
+           phone_box.Text = "" Or
+                RichTextBox1.Text = "" Then
+            MsgBox("Isi semua kolom", MsgBoxStyle.Information, "Belum keisi")
+        ElseIf id_box.Text = "" Then
+            query = "insert into customer (name_customer,phone_number_customer,addres_customer ) values('{0}','{1}','{2}')"
+            query = String.Format(query, name_box.Text, phone_box.Text, RichTextBox1.Text)
+            MsgBox("Berhasil Insert data", MsgBoxStyle.Information, "Berhsail")
+            aksi(query)
+            Call removebtn()
+            Call kondisiawal()
+        Else
+            query = "Update customer set name_customer='" & name_box.Text & "',phone_number_customer='" & phone_box.Text & "',addres_customer='" & RichTextBox1.Text & "' where id='" & id_box.Text & "'"
+            aksi(query)
+            MsgBox("Berhasil update data", MsgBoxStyle.Information, "Berhsasil")
+            Call removebtn()
+            Call kondisiawal()
+
+        End If
     End Sub
 End Class
