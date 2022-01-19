@@ -174,7 +174,7 @@ Public Class Manage_Employee
     Private Sub search_box_keypress(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
         If e.KeyChar = Chr(13) Then
             Call remove_bt()
-            query = "Select a.id,a.name_employee,a.id_job,a.email_employee,a.addres_employee,a.phone_number_employee,a.date_of_birth_employee ,a.salary_employee from employee a, job b where a.id_job=b.id and a.id like '%" & search_box.Text & "%' or a.name_employee like '%" & search_box.Text & "%'"
+            query = "Select a.id,a.name_employee,b.name_job,a.email_employee,a.addres_employee,a.phone_number_employee,a.date_of_birth_employee ,a.salary_employee from employee a, job b where a.id_job=b.id and a.id like '%" & search_box.Text & "%' or a.name_employee like '%" & search_box.Text & "%'"
             datagrid_view.AutoGenerateColumns = True
             datagrid_view.DataSource = read(query)
             Call addbtn()
