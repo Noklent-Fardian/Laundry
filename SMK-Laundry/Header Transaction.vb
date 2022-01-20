@@ -13,6 +13,15 @@ Public Class Header_Transaction
             conn.Open()
         End If
     End Sub
+
+    Private Sub total_box_TextChanged(sender As Object, e As EventArgs) Handles service_box.TextChanged
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+
+    End Sub
+
     Sub add_btn()
         Dim edit_btn, delete_btn As New DataGridViewButtonColumn
         edit_btn.HeaderText = "Edit"
