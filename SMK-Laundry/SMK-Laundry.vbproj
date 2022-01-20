@@ -83,6 +83,18 @@
     <Compile Include="Customer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Header Transaction.Designer.vb">
+      <DependentUpon>Header Transaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Header Transaction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prepaid Package.Designer.vb">
+      <DependentUpon>Prepaid Package.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Prepaid Package.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Manage Service.Designer.vb">
       <DependentUpon>Manage Service.vb</DependentUpon>
     </Compile>
@@ -147,6 +159,9 @@
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Header Transaction.resx">
+      <DependentUpon>Header Transaction.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manage Service.resx">
       <DependentUpon>Manage Service.vb</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +182,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prepaid Package.resx">
+      <DependentUpon>Prepaid Package.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.vb</DependentUpon>

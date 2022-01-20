@@ -23,4 +23,14 @@
         Customer.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Prepaid_Package.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Header_Transaction.Show()
+        Me.Hide()
+    End Sub
 End Class
