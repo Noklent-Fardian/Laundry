@@ -171,14 +171,6 @@ Public Class Manage_Employee
 
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    End Sub
-
-    Private Sub phone_box_TextChanged(sender As Object, e As EventArgs) Handles phone_box.TextChanged
-
-    End Sub
-
     Private Sub search_box_keypress(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
         If e.KeyChar = Chr(13) Then
             Call remove_bt()
