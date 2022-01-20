@@ -68,18 +68,7 @@ Public Class Manage_Package
         Me.Hide()
     End Sub
 
-    Private Sub search_box_keypress(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
-        If e.KeyChar = Chr(13) Then
-            Call removebt()
-            query = "select a.id,b.name_service,a.total_unit, a.price from package a, service b where b.id=a.id_service and a.id like '%" & id_box.Text & "'"
-            datagrid_view.AutoGenerateColumns = True
-            datagrid_view.DataSource = read(query)
-            Call addbtn()
 
-
-        End If
-
-    End Sub
 
     Private Sub price_box_keypress(sender As Object, e As KeyPressEventArgs) Handles price_box.KeyPress
         Dim kunci As Short = Asc(e.KeyChar)
@@ -117,14 +106,18 @@ Public Class Manage_Package
                 price_box.Text = "" Then
             MsgBox("Mohon isi semua kolom ", MsgBoxStyle.Information, "Kurang lengkap")
         ElseIf id_box.Text = "" Then
-            query = "insert into package (id_service, total_unit,price ) values ('{0}','{1}','{2}'"
-            query = String.Format(query, ComboBox1.Text, total_box.Text, price_box.Text)
+            query = "insert into package (id_service, total_unit,price ) values ('{0}','{1}','{2}')"
+            query = String.Format(query, id_Service, total_box.Text, price_box.Text)
             aksi(query)
             MsgBox("Insert data berhasil", MsgBoxStyle.Information, "Berhasil")
             Call removebt()
             Call kondisiawal()
         Else
-            MsgBox("Salah", MsgBoxStyle.Information, "SalahW")
+            query = "update package set id_service='" & id_Service & "',total_unit='" & total_box.Text & "',price='" & price_box.Text & "' where id='" & id_box.Text & "'"
+            aksi(query)
+            MsgBox("Berhasil update data", MsgBoxStyle.Information, "Berhasil")
+            Call removebt()
+            Call kondisiawal()
         End If
     End Sub
 
@@ -150,5 +143,17 @@ Public Class Manage_Package
 
             End If
         End If
+    End Sub
+    Private Sub search_box_keypress(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
+        If e.KeyChar = Chr(13) Then
+            Call removebt()
+            query = "select a.id,b.name_service,a.total_unit, a.price from package a, service b where b.id=a.id_service and a.id like '%" & search_box.Text & "%'"
+            datagrid_view.AutoGenerateColumns = True
+            datagrid_view.DataSource = read(query)
+            Call addbtn()
+
+
+        End If
+
     End Sub
 End Class
