@@ -3,7 +3,7 @@ Public Class Manage_Package
     Dim conn As SqlConnection
     Dim dr As SqlDataReader
     Dim cmd As SqlCommand
-    Dim query, id_Service As String
+    Dim query, query2, id_Service As String
 
     Sub koneksi()
         conn = New SqlConnection("Server=NOX; Database=Laundry; Integrated Security=True")
@@ -32,7 +32,11 @@ Public Class Manage_Package
     End Sub
     Sub kondisiawal()
         query = ("select a.id as Package_ID,b.name_service,a.total_unit, a.price from package a, service b where b.id=a.id_service ")
+        query2 = ("Select * from service")
         datagrid_view.DataSource = read(query)
+        datagrid_view2.DataSource = read(query2)
+        datagrid_view2.Hide()
+
         Call kosong()
         Call addbtn()
     End Sub
@@ -56,6 +60,7 @@ Public Class Manage_Package
         If dr.HasRows Then
             id_Service = dr.Item("id")
         End If
+
 
     End Sub
 
@@ -93,6 +98,7 @@ Public Class Manage_Package
     Private Sub reset_btn_Click(sender As Object, e As EventArgs) Handles reset_btn.Click
         Call kosong()
         Call service()
+        
     End Sub
 
     Sub removebt()
@@ -121,6 +127,18 @@ Public Class Manage_Package
         End If
     End Sub
 
+
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = False Then
+            datagrid_view2.Hide()
+        ElseIf CheckBox1.Checked = True Then
+            datagrid_view2.Show()
+
+        End If
+
+
+    End Sub
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
         If e.ColumnIndex = 4 Then
             id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
