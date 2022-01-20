@@ -34,8 +34,7 @@ Public Class Manage_Package
         query = ("select a.id as Package_ID,b.name_service,a.total_unit, a.price from package a, service b where b.id=a.id_service ")
         query2 = ("Select * from service")
         datagrid_view.DataSource = read(query)
-        datagrid_view2.DataSource = read(query2
-                                          )
+        datagrid_view2.DataSource = read(query2)
         datagrid_view2.Hide()
 
         Call kosong()
