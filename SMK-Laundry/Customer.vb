@@ -129,4 +129,8 @@ Public Class Customer
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
+
+    Private Sub search_box_TextChanged(sender As Object, e As EventArgs) Handles search_box.TextChanged
+
+    End Sub
 End Class
