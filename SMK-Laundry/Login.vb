@@ -14,6 +14,8 @@
             Manage_Package.Label2.Text = "Hello  " + nama
             Manage_Service.Label2.Text = "Hello  " + nama
             Customer.Label2.Text = "Hello     " + nama
+            Prepaid_Package.Label2.Text = "Heloo   " + nama
+            Header_Transaction.Label2.Text = "Heloo  " + nama
 
             Me.Hide()
 
