@@ -22,9 +22,9 @@ Partial Class Header_Transaction
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -37,7 +37,6 @@ Partial Class Header_Transaction
         Me.datagrid_view = New System.Windows.Forms.DataGridView()
         Me.reset_btn = New System.Windows.Forms.Button()
         Me.submit_btn = New System.Windows.Forms.Button()
-        Me.service_box = New System.Windows.Forms.TextBox()
         Me.label = New System.Windows.Forms.Label()
         Me.price_box = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -45,12 +44,13 @@ Partial Class Header_Transaction
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.addres_label = New System.Windows.Forms.Label()
-        Me.name_label = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.Phone_box = New System.Windows.Forms.TextBox()
+        Me.name_label = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -150,41 +150,41 @@ Partial Class Header_Transaction
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(413, 25)
+        Me.Label3.Location = New System.Drawing.Point(227, 0)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(347, 42)
+        Me.Label3.Size = New System.Drawing.Size(700, 42)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Header Transaction"
+        Me.Label3.Text = "Header Transaction /Transaction Deposit"
         '
         'datagrid_view
         '
         Me.datagrid_view.AllowUserToAddRows = False
         Me.datagrid_view.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.datagrid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagrid_view.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.datagrid_view.DefaultCellStyle = DataGridViewCellStyle8
         Me.datagrid_view.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.datagrid_view.Location = New System.Drawing.Point(0, 167)
         Me.datagrid_view.Name = "datagrid_view"
         Me.datagrid_view.ReadOnly = True
         Me.datagrid_view.RowHeadersWidth = 51
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.datagrid_view.RowTemplate.Height = 24
         Me.datagrid_view.Size = New System.Drawing.Size(1155, 222)
         Me.datagrid_view.TabIndex = 53
@@ -208,13 +208,6 @@ Partial Class Header_Transaction
         Me.submit_btn.TabIndex = 54
         Me.submit_btn.Text = "Submit"
         Me.submit_btn.UseVisualStyleBackColor = True
-        '
-        'service_box
-        '
-        Me.service_box.Location = New System.Drawing.Point(835, 424)
-        Me.service_box.Name = "service_box"
-        Me.service_box.Size = New System.Drawing.Size(284, 22)
-        Me.service_box.TabIndex = 57
         '
         'label
         '
@@ -292,6 +285,14 @@ Partial Class Header_Transaction
         Me.addres_label.TabIndex = 110
         Me.addres_label.Text = "Address"
         '
+        'Phone_box
+        '
+        Me.Phone_box.Location = New System.Drawing.Point(201, 59)
+        Me.Phone_box.Margin = New System.Windows.Forms.Padding(4)
+        Me.Phone_box.Name = "Phone_box"
+        Me.Phone_box.Size = New System.Drawing.Size(379, 34)
+        Me.Phone_box.TabIndex = 106
+        '
         'name_label
         '
         Me.name_label.AutoSize = True
@@ -303,6 +304,17 @@ Partial Class Header_Transaction
         Me.name_label.TabIndex = 109
         Me.name_label.Text = "Name"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(23, 59)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(143, 25)
+        Me.Label11.TabIndex = 105
+        Me.Label11.Text = "Phone Number"
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -313,17 +325,6 @@ Partial Class Header_Transaction
         Me.Label10.Size = New System.Drawing.Size(91, 25)
         Me.Label10.TabIndex = 108
         Me.Label10.Text = "Address:"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(89, 163)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 25)
-        Me.Label9.TabIndex = 107
-        Me.Label9.Text = "Name :"
         '
         'Label8
         '
@@ -337,24 +338,24 @@ Partial Class Header_Transaction
         Me.Label8.TabIndex = 104
         Me.Label8.Text = "Not Found? Add New +"
         '
-        'Label11
+        'Label9
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(23, 59)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(143, 25)
-        Me.Label11.TabIndex = 105
-        Me.Label11.Text = "Phone Number"
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(89, 163)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(75, 25)
+        Me.Label9.TabIndex = 107
+        Me.Label9.Text = "Name :"
         '
-        'Phone_box
+        'ComboBox1
         '
-        Me.Phone_box.Location = New System.Drawing.Point(201, 59)
-        Me.Phone_box.Margin = New System.Windows.Forms.Padding(4)
-        Me.Phone_box.Name = "Phone_box"
-        Me.Phone_box.Size = New System.Drawing.Size(379, 34)
-        Me.Phone_box.TabIndex = 106
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(825, 421)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(294, 24)
+        Me.ComboBox1.TabIndex = 63
         '
         'Header_Transaction
         '
@@ -362,12 +363,12 @@ Partial Class Header_Transaction
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(1155, 711)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.total_box)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.price_box)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.service_box)
         Me.Controls.Add(Me.label)
         Me.Controls.Add(Me.reset_btn)
         Me.Controls.Add(Me.submit_btn)
@@ -401,7 +402,6 @@ Partial Class Header_Transaction
     Friend WithEvents datagrid_view As DataGridView
     Friend WithEvents reset_btn As Button
     Friend WithEvents submit_btn As Button
-    Friend WithEvents service_box As TextBox
     Friend WithEvents label As Label
     Friend WithEvents price_box As TextBox
     Friend WithEvents Label5 As Label
@@ -415,4 +415,5 @@ Partial Class Header_Transaction
     Friend WithEvents Label10 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
