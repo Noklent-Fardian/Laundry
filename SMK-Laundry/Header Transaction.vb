@@ -105,7 +105,7 @@ Public Class Header_Transaction
             If dr.HasRows Then
                 id_transaction = dr.Item("id")
             End If
-            query = "insert into detail_transaction(id_detail_transactionr,id_service,price_detail_transaction,total_unit_transaction,id_prepaid_transaction) values('{0}','{1}','{2}','{3}','{4}',' '"
+            query = "insert into detail_transaction(id_header_transactionr,id_prepaid_transaction,id_service,price_detail_transaction,total_unit_transaction) values('{0}',' ','{1}','{2}','{3}')"
             query = String.Format(query, id_transaction, id_service, price_box.Text, total_box.Text)
             aksi(query)
             query = "insert into package(id_service,total_unit,price) values('{0}','{1}','{2}')"
