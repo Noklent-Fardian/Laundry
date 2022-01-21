@@ -52,6 +52,34 @@ Public Class Header_Transaction
 
     End Sub
 
+    Private Sub Phone_box_keypress(sender As Object, e As KeyPressEventArgs) Handles Phone_box.KeyPress
+        Dim kunci As Short = Asc(e.KeyChar)
+        If (e.KeyChar Like "[0-9]" _
+            OrElse kunci = Keys.Back) Then
+            kunci = 0
+        End If
+        e.Handled = CBool(kunci)
+
+        If e.KeyChar = Chr(13) Then
+            Call koneksi()
+            query = "select * from customer where phone_number_customer='" & Phone_box.Text & "'"
+            cmd = New SqlCommand(query, conn)
+            dr = cmd.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                id_customer = dr.Item("id")
+                name_label.Text = " " + dr.Item("name_customer") + ""
+                addres_label.Text = "" + dr.Item("addres_customer") + " "
+            End If
+        End If
+
+
+    End Sub
+
+    Private Sub reset_btn_Click(sender As Object, e As EventArgs) Handles reset_btn.Click
+        Call kosong()
+    End Sub
+
     Sub kosong()
         Phone_box.Text = ""
         price_box.Text = ""
@@ -61,8 +89,8 @@ Public Class Header_Transaction
     End Sub
 
     Sub kondisi_awal()
-        query = "select a.id_header_transactionr 'Id Deposit', a.id_service,a.price_detail_transaction 'price',a.total_unit_transaction 'Total', b.id_customer,b.id_employee,b.transaction_date_time_header_transaction 'Date' from detail_transaction a, header_transaction b where a.id_header_transactionr=b.id"
-        datagrid_view.DataSource = read(query)
+        query = "Select a.id_header_transactionr 'Id Deposit', a.id_service,a.price_detail_transaction 'price',a.total_unit_transaction 'Total', b.id_customer,b.id_employee,b.transaction_date_time_header_transaction 'Date' from detail_transaction a, header_transaction b where a.id_header_transactionr=b.id"
+                datagrid_view.DataSource = read(query)
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
