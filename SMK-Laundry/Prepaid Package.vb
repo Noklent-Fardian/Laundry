@@ -3,7 +3,7 @@ Public Class Prepaid_Package
     Dim cmd As SqlCommand
     Dim conn As SqlConnection
     Dim dr As SqlDataReader
-    Dim query As String
+    Dim query, id_prepaid, id_package, id_customer As String
 
     Sub koneksi()
         conn = New SqlConnection("Server=NOX;Database=Laundry;Integrated Security=True")
