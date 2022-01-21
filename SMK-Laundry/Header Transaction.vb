@@ -30,6 +30,7 @@ Public Class Header_Transaction
     End Sub
 
     Private Sub Header_Transaction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call kondisi_awal()
         Call service()
     End Sub
 
@@ -47,6 +48,10 @@ Public Class Header_Transaction
 
     End Sub
 
+    Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
+
+    End Sub
+
     Sub kosong()
         Phone_box.Text = ""
         price_box.Text = ""
@@ -56,7 +61,8 @@ Public Class Header_Transaction
     End Sub
 
     Sub kondisi_awal()
-        query = ""
+        query = "select a.id_header_transactionr 'Id Deposit', a.id_service,a.price_detail_transaction 'price',a.total_unit_transaction 'Total', b.id_customer,b.id_employee,b.transaction_date_time_header_transaction 'Date' from detail_transaction a, header_transaction b where a.id_header_transactionr=b.id"
+        datagrid_view.DataSource = read(query)
 
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
