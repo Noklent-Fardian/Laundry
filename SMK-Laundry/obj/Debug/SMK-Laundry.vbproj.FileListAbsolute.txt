@@ -19,3 +19,24 @@ C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Manage
 C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Customer.resources
 C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Prepaid_Package.resources
 C:\Users\nokle\source\repos\SMK-Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Header_Transaction.resources
+C:\Visual Basic\Laundry\SMK-Laundry\bin\Debug\SMK-Laundry.exe.config
+C:\Visual Basic\Laundry\SMK-Laundry\bin\Debug\SMK-Laundry.exe
+C:\Visual Basic\Laundry\SMK-Laundry\bin\Debug\SMK-Laundry.pdb
+C:\Visual Basic\Laundry\SMK-Laundry\bin\Debug\SMK-Laundry.xml
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.vbproj.AssemblyReference.cache
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.vbproj.SuggestedBindingRedirects.cache
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Customer.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Header_Transaction.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Manage_Service.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Manage_Package.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Manage_Employee.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.MainMenu.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Login.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Resources.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Prepaid_Package.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.Register.resources
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.vbproj.GenerateResource.cache
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.vbproj.CoreCompileInputs.cache
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.exe
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.xml
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.pdb

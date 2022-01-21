@@ -95,7 +95,7 @@ Public Class Header_Transaction
             MsgBox("Isi semua Kolom", MsgBoxStyle.Information, "Belum Lengkap")
         Else
             query = "insert into header_transaction(id_employee,id_customer,transaction_date_time_header_transaction) values('{0}','{1}','{2}')"
-            query = String.Format(query, id_customer, employe.Text, DateTimePicker1.Value.ToString("yyyy-MM-dd"))
+            query = String.Format(query, employe.Text, id_customer, DateTimePicker1.Value.ToString("yyyy-MM-dd"))
             aksi(query)
             Call koneksi()
             query = "select top (1) * from header_transaction order by id desc"
@@ -105,8 +105,24 @@ Public Class Header_Transaction
             If dr.HasRows Then
                 id_transaction = dr.Item("id")
             End If
-            query = "insert into detail_transaction"
+            query = "insert into detail_transaction(id_detail_transactionr,id_service,price_detail_transaction,total_unit_transaction,id_prepaid_transaction) values('{0}','{1}','{2}','{3}','{4}',' '"
+            query = String.Format(query, id_transaction, id_service, price_box.Text, total_box.Text)
+            aksi(query)
+            query = "insert into package(id_service,total_unit,price) values('{0}','{1}','{2}')"
+            query = String.Format(query, id_service, total_box.Text, (price_box.Text * total_box.Text))
+            aksi(query)
+            MsgBox("Insert Data Deposit Berhasil ", MsgBoxStyle.Information, "Information")
+            Call kondisi_awal()
         End If
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
+        Call kondisi_awal()
     End Sub
 
     Sub kosong()
@@ -120,9 +136,11 @@ Public Class Header_Transaction
     Sub kondisi_awal()
         query = "Select a.id_header_transactionr 'Id Deposit', a.id_service,a.price_detail_transaction 'price',a.total_unit_transaction 'Total', b.id_customer,b.id_employee,b.transaction_date_time_header_transaction 'Date' from detail_transaction a, header_transaction b where a.id_header_transactionr=b.id"
         datagrid_view.DataSource = read(query)
+
         Call kosong()
 
     End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MainMenu.Show()
         Me.Hide()
