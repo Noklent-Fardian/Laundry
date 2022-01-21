@@ -94,9 +94,18 @@ Public Class Header_Transaction
             name_label.Text = "" Then
             MsgBox("Isi semua Kolom", MsgBoxStyle.Information, "Belum Lengkap")
         Else
-            query = "Insert into header_transaction(id_employee,id_customer,transaction_date_time_header_transaction) values('{0}','{1}','{2}'"
+            query = "insert into header_transaction(id_employee,id_customer,transaction_date_time_header_transaction) values('{0}','{1}','{2}')"
             query = String.Format(query, id_customer, employe.Text, DateTimePicker1.Value.ToString("yyyy-MM-dd"))
             aksi(query)
+            Call koneksi()
+            query = "select top (1) * from header_transaction order by id desc"
+            cmd = New SqlCommand(query, conn)
+            dr = cmd.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                id_transaction = dr.Item("id")
+            End If
+            query = "insert into detail_transaction"
         End If
     End Sub
 
