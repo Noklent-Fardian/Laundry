@@ -24,7 +24,6 @@ Partial Class Header_Transaction
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -51,6 +50,7 @@ Partial Class Header_Transaction
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.employe = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -170,21 +170,13 @@ Partial Class Header_Transaction
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datagrid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.datagrid_view.DefaultCellStyle = DataGridViewCellStyle2
         Me.datagrid_view.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.datagrid_view.Location = New System.Drawing.Point(0, 167)
         Me.datagrid_view.Name = "datagrid_view"
         Me.datagrid_view.ReadOnly = True
         Me.datagrid_view.RowHeadersWidth = 51
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.datagrid_view.RowTemplate.Height = 24
         Me.datagrid_view.Size = New System.Drawing.Size(1155, 222)
         Me.datagrid_view.TabIndex = 53
@@ -222,6 +214,7 @@ Partial Class Header_Transaction
         '
         'price_box
         '
+        Me.price_box.Enabled = False
         Me.price_box.Location = New System.Drawing.Point(835, 479)
         Me.price_box.Name = "price_box"
         Me.price_box.Size = New System.Drawing.Size(284, 22)
@@ -357,12 +350,21 @@ Partial Class Header_Transaction
         Me.ComboBox1.Size = New System.Drawing.Size(284, 24)
         Me.ComboBox1.TabIndex = 63
         '
+        'employe
+        '
+        Me.employe.Enabled = False
+        Me.employe.Location = New System.Drawing.Point(1096, 609)
+        Me.employe.Name = "employe"
+        Me.employe.Size = New System.Drawing.Size(30, 22)
+        Me.employe.TabIndex = 64
+        '
         'Header_Transaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(1155, 711)
+        Me.Controls.Add(Me.employe)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.total_box)
@@ -416,4 +418,5 @@ Partial Class Header_Transaction
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents employe As TextBox
 End Class
