@@ -25,6 +25,12 @@ Public Class Prepaid_Package
         ComboBox1.DisplayMember = "name_service"
         ComboBox1.ValueMember = "name_service"
     End Sub
+    Sub remove_btn()
+        datagrid_view.Columns.RemoveAt(5)
+
+
+
+    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MainMenu.Show()
@@ -76,11 +82,42 @@ Public Class Prepaid_Package
         Call kosong()
     End Sub
 
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+    Private Sub Prepaid_Package_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call unit()
         Call kondisiawal()
     End Sub
+
+    Private Sub submit_btn_Click(sender As Object, e As EventArgs) Handles submit_btn.Click
+        If id_boc.Text = "" Or
+                ComboBox1.Text = "" Or
+                price_box.Text = "" Or
+                name_label.Text = "" Then
+            MsgBox("Data belum lengkap", MsgBoxStyle.Information, "Belum lengkap")
+        Else
+            query = "insert into prepaid_package(id_customer,id_package,price,start_date) values('{0}','{1}','{2}','{3}')"
+            query = String.Format(query, id_customer, id_package, price_box.Text, DateTimePicker1.Value.ToString("yyyy-MM-dd"))
+            aksi(query)
+            Call koneksi()
+            query = "select top (1) * from prepaid_package order by id desc"
+            cmd = New SqlCommand(query, conn)
+            dr = cmd.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                id_prepaid = dr.Item("id")
+            End If
+            query = "update detail_transaction set id_prepaid_transaction='" & id_prepaid & "' where id='" & id_boc.Text & "'"
+            aksi(query)
+            MsgBox("Insert Data PrepaidPackage Berhasil ", MsgBoxStyle.Information, "Information")
+
+            Call kondisiawal()
+        End If
+    End Sub
+
+    Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
+        Call remove_btn()
+        Call kondisiawal()
+    End Sub
+
     Private Sub Phone_box_keypress(sender As Object, e As KeyPressEventArgs) Handles Phone_box.KeyPress
         Dim kunci As Short = Asc(e.KeyChar)
         If (e.KeyChar Like "[0-9]" _
@@ -109,7 +146,5 @@ Public Class Prepaid_Package
 
     End Sub
 
-    Private Sub Prepaid_Package_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class
