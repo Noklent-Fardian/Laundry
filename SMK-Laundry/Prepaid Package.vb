@@ -17,6 +17,7 @@ Public Class Prepaid_Package
         name_label.Text = ""
         addres_label.Text = ""
         price_box.Text = ""
+        Phone_box.Text = ""
     End Sub
 
     Sub unit()
@@ -26,9 +27,8 @@ Public Class Prepaid_Package
         ComboBox1.ValueMember = "name_service"
     End Sub
     Sub remove_btn()
-        datagrid_view.Columns.RemoveAt(5)
 
-
+        datagrid_view.Columns.RemoveAt(6)
 
     End Sub
 
@@ -66,19 +66,20 @@ Public Class Prepaid_Package
         price_box.Text = datagrid_view.CurrentRow.Cells(5).Value
     End Sub
 
-    Private Sub Phone_box_TextChanged(sender As Object, e As EventArgs) Handles Phone_box.TextChanged
-
+    Sub add_btn()
+        Dim select_btn As New DataGridViewButtonColumn
+        select_btn.headertext = "Action"
+        select_btn.Text = "Select"
+        select_btn.HeaderText = "select"
+        select_btn.FlatStyle = FlatStyle.Flat
+        select_btn.UseColumnTextForButtonValue = True
+        datagrid_view.Columns.Add(select_btn)
     End Sub
 
     Sub kondisiawal()
         query = "select a.id 'DetailDeposit ID',d.name_customer 'Customer',b.name_service'Service',a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price' from detail_transaction a,service b,header_transaction c,customer d where a.id_service=b.id and a.id_header_transactionr=c.id and c.id_customer=d.id"
         datagrid_view.DataSource = read(query)
-        Dim btn As New DataGridViewButtonColumn()
-        btn.HeaderText = "Action"
-        btn.Text = "Select"
-        btn.Name = "btnSelect"
-        btn.UseColumnTextForButtonValue = True
-        datagrid_view.Columns.Add(btn)
+        Call add_btn()
         Call kosong()
     End Sub
 
@@ -108,7 +109,7 @@ Public Class Prepaid_Package
             query = "update detail_transaction set id_prepaid_transaction='" & id_prepaid & "' where id='" & id_boc.Text & "'"
             aksi(query)
             MsgBox("Insert Data PrepaidPackage Berhasil ", MsgBoxStyle.Information, "Information")
-
+            Call remove_btn()
             Call kondisiawal()
         End If
     End Sub
@@ -116,6 +117,9 @@ Public Class Prepaid_Package
     Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
         Call remove_btn()
         Call kondisiawal()
+
+
+
     End Sub
 
     Private Sub Phone_box_keypress(sender As Object, e As KeyPressEventArgs) Handles Phone_box.KeyPress
