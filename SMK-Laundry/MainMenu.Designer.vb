@@ -34,6 +34,7 @@ Partial Class MainMenu
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -158,12 +159,22 @@ Partial Class MainMenu
         'Button6
         '
         Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(132, 452)
+        Me.Button6.Location = New System.Drawing.Point(135, 443)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(286, 145)
         Me.Button6.TabIndex = 13
         Me.Button6.Text = "Header Transaction"
         Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Location = New System.Drawing.Point(869, 443)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(264, 145)
+        Me.Button7.TabIndex = 14
+        Me.Button7.Text = "View Transaction"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
@@ -171,6 +182,7 @@ Partial Class MainMenu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightSeaGreen
         Me.ClientSize = New System.Drawing.Size(1277, 712)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -203,4 +215,5 @@ Partial Class MainMenu
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
 End Class

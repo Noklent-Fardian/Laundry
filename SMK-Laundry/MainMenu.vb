@@ -33,4 +33,9 @@
         Header_Transaction.Show()
         Me.Hide()
     End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        View_transaction.Show()
+        Me.Hide()
+    End Sub
 End Class

@@ -40,3 +40,4 @@ C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.vbproj.CoreCompileInpu
 C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.exe
 C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.xml
 C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK-Laundry.pdb
+C:\Visual Basic\Laundry\SMK-Laundry\obj\Debug\SMK_Laundry.View_transaction.resources
