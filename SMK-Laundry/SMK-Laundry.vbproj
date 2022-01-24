@@ -83,6 +83,12 @@
     <Compile Include="Customer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="View Transaction.Designer.vb">
+      <DependentUpon>View Transaction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="View Transaction.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Header Transaction.Designer.vb">
       <DependentUpon>Header Transaction.vb</DependentUpon>
     </Compile>
@@ -158,6 +164,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Customer.resx">
       <DependentUpon>Customer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View Transaction.resx">
+      <DependentUpon>View Transaction.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Header Transaction.resx">
       <DependentUpon>Header Transaction.vb</DependentUpon>

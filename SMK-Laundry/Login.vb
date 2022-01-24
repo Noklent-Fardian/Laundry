@@ -17,6 +17,7 @@
             Prepaid_Package.Label2.Text = "Heloo   " + nama
             Header_Transaction.Label2.Text = "Heloo  " + nama
             Header_Transaction.employe.Text = userID
+            View_transaction.Label2.Text = "Hello     " + nama
 
             Me.Hide()
 
