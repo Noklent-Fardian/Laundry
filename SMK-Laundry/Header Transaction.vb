@@ -125,6 +125,10 @@ Public Class Header_Transaction
         Call kondisi_awal()
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
     Sub kosong()
         Phone_box.Text = ""
         total_box.Text = ""
@@ -134,7 +138,7 @@ Public Class Header_Transaction
     End Sub
 
     Sub kondisi_awal()
-        query = "Select a.id_header_transactionr 'Id Deposit', a.id_service,a.price_detail_transaction 'price',a.total_unit_transaction 'Total', c.name_customer,d.name_employee,b.transaction_date_time_header_transaction 'Date' from detail_transaction a, header_transaction b, customer c, employee d where a.id_header_transactionr=b.id and c.id=b.id_customer and d.id = b.id_employee "
+        query = "Select a.id_header_transactionr ,c.name_customer, e.name_service,a.price_detail_transaction 'price',a.total_unit_transaction 'Total',d.name_employee,b.transaction_date_time_header_transaction 'Date', b.complete_estimation_date_time_header_transaction 'Perkiraan'from detail_transaction a, header_transaction b, customer c, employee d, service e where a.id_header_transactionr=b.id and c.id=b.id_customer and d.id = b.id_employee and e.id=a.id_service "
         datagrid_view.DataSource = read(query)
 
         Call kosong()
