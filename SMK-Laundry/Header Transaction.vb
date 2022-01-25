@@ -134,7 +134,7 @@ Public Class Header_Transaction
     End Sub
 
     Sub kondisi_awal()
-        query = "Select a.id_header_transactionr 'Id Deposit', a.id_service,a.price_detail_transaction 'price',a.total_unit_transaction 'Total', b.id_customer,b.id_employee,b.transaction_date_time_header_transaction 'Date' from detail_transaction a, header_transaction b where a.id_header_transactionr=b.id"
+        query = "Select a.id_header_transactionr 'Id Deposit', a.id_service,a.price_detail_transaction 'price',a.total_unit_transaction 'Total', c.name_customer,d.name_employee,b.transaction_date_time_header_transaction 'Date' from detail_transaction a, header_transaction b, customer c, employee d where a.id_header_transactionr=b.id and c.id=b.id_customer and d.id = b.id_employee "
         datagrid_view.DataSource = read(query)
 
         Call kosong()
