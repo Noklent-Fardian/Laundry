@@ -32,7 +32,7 @@ Public Class Manage_Package
     End Sub
     Sub kondisiawal()
         query = ("select a.id as Package_ID,b.name_service,a.total_unit, a.price from package a, service b where b.id=a.id_service ")
-        query2 = ("Select * from service")
+        query2 = (" Select a.id, a.name_service as Name, b.name_unit as Unit, c.name_category as Category,a.price_unit_service as Prce, a.estimation_duration_service as Estimation_Duration from service a, unit b, category c where a.id_unit=b.id and a.id_category=c.id")
         datagrid_view.DataSource = read(query)
         datagrid_view2.DataSource = read(query2)
         datagrid_view2.Hide()
@@ -139,6 +139,11 @@ Public Class Manage_Package
 
 
     End Sub
+
+    Private Sub search_box_TextChanged(sender As Object, e As EventArgs) Handles search_box.TextChanged
+
+    End Sub
+
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
         If e.ColumnIndex = 4 Then
             id_box.Text = datagrid_view.CurrentRow.Cells(0).Value

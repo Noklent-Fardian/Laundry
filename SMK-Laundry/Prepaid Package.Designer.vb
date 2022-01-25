@@ -236,7 +236,6 @@ Partial Class Prepaid_Package
         '
         'price_box
         '
-        Me.price_box.Enabled = False
         Me.price_box.Location = New System.Drawing.Point(844, 539)
         Me.price_box.Name = "price_box"
         Me.price_box.Size = New System.Drawing.Size(284, 22)

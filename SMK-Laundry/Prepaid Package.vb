@@ -77,7 +77,7 @@ Public Class Prepaid_Package
     End Sub
 
     Sub kondisiawal()
-        query = "select a.id 'DetailDeposit ID',d.name_customer 'Customer',b.name_service'Service',a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price' from detail_transaction a,service b,header_transaction c,customer d where a.id_service=b.id and a.id_header_transactionr=c.id and c.id_customer=d.id"
+        query = "select a.id,d.name_customer 'Customer',b.name_service'Service',a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price' from detail_transaction a,service b,header_transaction c,customer d where a.id_service=b.id and a.id_header_transactionr=c.id and c.id_customer=d.id"
         datagrid_view.DataSource = read(query)
         Call add_btn()
         Call kosong()
@@ -89,9 +89,7 @@ Public Class Prepaid_Package
     End Sub
 
     Private Sub submit_btn_Click(sender As Object, e As EventArgs) Handles submit_btn.Click
-        If id_boc.Text = "" Or
-                ComboBox1.Text = "" Or
-                price_box.Text = "" Or
+        If ComboBox1.Text = "" Or
                 name_label.Text = "" Then
             MsgBox("Data belum lengkap", MsgBoxStyle.Information, "Belum lengkap")
         Else
