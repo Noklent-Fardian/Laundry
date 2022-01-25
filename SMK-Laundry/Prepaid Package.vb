@@ -96,7 +96,7 @@ Public Class Prepaid_Package
             MsgBox("Data belum lengkap", MsgBoxStyle.Information, "Belum lengkap")
         Else
             query = "insert into prepaid_package(id_customer,id_package,price,start_date) values('{0}','{1}','{2}','{3}')"
-            query = String.Format(query, id_customer, id_package, price_box.Text, DateTimePicker1.Value.ToString("yyyy-MM-dd"))
+            query = String.Format(query, id_customer, id_package, price_box.Text, DateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm"))
             aksi(query)
             Call koneksi()
             query = "select top (1) * from prepaid_package order by id desc"

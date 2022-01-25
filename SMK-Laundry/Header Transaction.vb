@@ -95,7 +95,7 @@ Public Class Header_Transaction
             MsgBox("Isi semua Kolom", MsgBoxStyle.Information, "Belum Lengkap")
         Else
             query = "insert into header_transaction(id_employee,id_customer,transaction_date_time_header_transaction) values('{0}','{1}','{2}')"
-            query = String.Format(query, employe.Text, id_customer, DateTimePicker1.Value.ToString("yyyy-MM-dd"))
+            query = String.Format(query, employe.Text, id_customer, DateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm"))
             aksi(query)
             Call koneksi()
             query = "select top (1) * from header_transaction order by id desc"
