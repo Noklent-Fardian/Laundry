@@ -56,6 +56,8 @@ Public Class View_transaction
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
         id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
         If e.ColumnIndex = 6 Then
+            query2 = "Select *from detail_transaction"
+            datadrid_view2.DataSource = read(query2)
             GroupBox2.Show()
         End If
         Call removebtn()

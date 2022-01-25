@@ -85,7 +85,7 @@ Partial Class View_transaction
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid_view.DefaultCellStyle = DataGridViewCellStyle2
         Me.datagrid_view.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.datagrid_view.Location = New System.Drawing.Point(0, 21)
+        Me.datagrid_view.Location = New System.Drawing.Point(-1, 18)
         Me.datagrid_view.Name = "datagrid_view"
         Me.datagrid_view.ReadOnly = True
         Me.datagrid_view.RowHeadersWidth = 51
