@@ -56,7 +56,7 @@ Public Class View_transaction
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
         id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
         If e.ColumnIndex = 6 Then
-            query2 = "Select *from detail_transaction"
+            query2 = "select b.name_service,a.id_prepaid_transaction,a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price',a.completed_datetime_detail_transaction from detail_transaction a, service b where b.id=a.id_service and a.id_header_transactionr ='" & datagrid_view.CurrentRow.Cells(0).Value & "'"
             datadrid_view2.DataSource = read(query2)
             GroupBox2.Show()
         End If

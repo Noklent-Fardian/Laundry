@@ -13,6 +13,7 @@ Public Class Manage_Package
         id_box.Text = ""
         total_box.Text = ""
         price_box.Text = ""
+        CheckBox1.Checked = False
     End Sub
     Sub addbtn()
         Dim edit_btn, delete_btn As New DataGridViewButtonColumn
@@ -142,6 +143,11 @@ Public Class Manage_Package
 
     Private Sub search_box_TextChanged(sender As Object, e As EventArgs) Handles search_box.TextChanged
 
+    End Sub
+
+    Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
+        Call removebt()
+        Call kondisiawal()
     End Sub
 
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick

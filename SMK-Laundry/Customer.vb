@@ -133,4 +133,9 @@ Public Class Customer
     Private Sub search_box_TextChanged(sender As Object, e As EventArgs) Handles search_box.TextChanged
 
     End Sub
+
+    Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
+        Call removebtn()
+        Call kondisiawal()
+    End Sub
 End Class
