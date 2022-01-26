@@ -4,7 +4,7 @@ Public Class Header_Transaction
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
-    Dim query, id_service, id_customer, id_transaction As String
+    Dim query, id_service, id_customer, id_transaction, price_detail As String
     Sub koneksi()
         conn = New SqlConnection("Server=NOX; Database=Laundry; Integrated Security=True")
         If conn.State = ConnectionState.Closed Then
@@ -28,9 +28,17 @@ Public Class Header_Transaction
         ComboBox1.DisplayMember = "name_service"
 
     End Sub
+    Sub price()
+        Call koneksi()
+        query = "select  a.price_unit_service*b.total_unit_transaction from service a, detail_trasaction b"
+        cmd = New SqlCommand(query, conn)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        price_detail = dr.Item(query)
+    End Sub
 
     Private Sub Header_Transaction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call kondisi_awal()
+        Call kosong()
         Call service()
     End Sub
 
@@ -94,35 +102,34 @@ Public Class Header_Transaction
             name_label.Text = "" Then
             MsgBox("Isi semua Kolom", MsgBoxStyle.Information, "Belum Lengkap")
         Else
-            query = "insert into header_transaction(id_employee,id_customer,transaction_date_time_header_transaction) values('{0}','{1}','{2}')"
-            query = String.Format(query, employe.Text, id_customer, DateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm"))
-            aksi(query)
-            Call koneksi()
-            query = "select top (1) * from header_transaction order by id desc"
-            cmd = New SqlCommand(query, conn)
-            dr = cmd.ExecuteReader
-            dr.Read()
-            If dr.HasRows Then
-                id_transaction = dr.Item("id")
-            End If
-            query = "insert into detail_transaction(id_header_transactionr,id_prepaid_transaction,id_service,price_detail_transaction,total_unit_transaction) values('{0}',' ','{1}','{2}','{3}')"
-            query = String.Format(query, id_transaction, id_service, price_box.Text, total_box.Text)
-            aksi(query)
-            query = "insert into package(id_service,total_unit,price) values('{0}','{1}','{2}')"
-            query = String.Format(query, id_service, total_box.Text, (price_box.Text * total_box.Text))
-            aksi(query)
-            MsgBox("Insert Data Deposit Berhasil ", MsgBoxStyle.Information, "Information")
-            Call kondisi_awal()
+
         End If
 
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
+    Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
+        Call kosong()
     End Sub
 
-    Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
-        Call kondisi_awal()
+    Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
+        If name_label.Text = "" Or
+                total_box.Text = "" Then
+            MsgBox("Lengkapi data", MsgBoxStyle.Information, "Lengkapi")
+
+
+        End If
+    End Sub
+
+    Private Sub check_btn_Click(sender As Object, e As EventArgs) Handles check_btn.Click
+        If name_label.Text = "" Then
+            MsgBox("Lengkapi data", MsgBoxStyle.Information, "Lengkapi")
+
+        Else
+            query = "select a.name_service,c.id 'Prepaid Package',a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b, prepaid_package c,unit d,header_transaction e where b.id_service=a.id and b.id_prepaid_transaction=c.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
+            datagrid_view.DataSource = read(query)
+
+
+        End If
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
@@ -134,17 +141,9 @@ Public Class Header_Transaction
         total_box.Text = ""
         name_label.Text = ""
         addres_label.Text = ""
+        CheckBox1.Checked = False
 
     End Sub
-
-    Sub kondisi_awal()
-        query = "Select a.id_header_transactionr ,c.name_customer, e.name_service,a.price_detail_transaction 'price',a.total_unit_transaction 'Total',d.name_employee,b.transaction_date_time_header_transaction 'Date', b.complete_estimation_date_time_header_transaction 'Perkiraan'from detail_transaction a, header_transaction b, customer c, employee d, service e where a.id_header_transactionr=b.id and c.id=b.id_customer and d.id = b.id_employee and e.id=a.id_service "
-        datagrid_view.DataSource = read(query)
-
-        Call kosong()
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MainMenu.Show()
         Me.Hide()

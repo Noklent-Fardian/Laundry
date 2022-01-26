@@ -22,8 +22,8 @@ Partial Class Header_Transaction
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -49,6 +49,14 @@ Partial Class Header_Transaction
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.employe = New System.Windows.Forms.TextBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Estimation = New System.Windows.Forms.Label()
+        Me.estimation_label = New System.Windows.Forms.Label()
+        Me.price_label = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.add_btn = New System.Windows.Forms.Button()
+        Me.check_btn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -138,30 +146,30 @@ Partial Class Header_Transaction
         '
         Me.datagrid_view.AllowUserToAddRows = False
         Me.datagrid_view.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.datagrid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.datagrid_view.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.datagrid_view.Location = New System.Drawing.Point(0, 167)
+        Me.datagrid_view.Location = New System.Drawing.Point(599, 189)
         Me.datagrid_view.Name = "datagrid_view"
         Me.datagrid_view.ReadOnly = True
         Me.datagrid_view.RowHeadersWidth = 51
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.datagrid_view.RowTemplate.Height = 24
-        Me.datagrid_view.Size = New System.Drawing.Size(1155, 222)
+        Me.datagrid_view.Size = New System.Drawing.Size(553, 238)
         Me.datagrid_view.TabIndex = 53
         '
         'reset_btn
         '
         Me.reset_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.reset_btn.Location = New System.Drawing.Point(809, 603)
+        Me.reset_btn.Location = New System.Drawing.Point(187, 641)
         Me.reset_btn.Name = "reset_btn"
         Me.reset_btn.Size = New System.Drawing.Size(97, 35)
         Me.reset_btn.TabIndex = 55
@@ -171,7 +179,7 @@ Partial Class Header_Transaction
         'submit_btn
         '
         Me.submit_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.submit_btn.Location = New System.Drawing.Point(993, 603)
+        Me.submit_btn.Location = New System.Drawing.Point(865, 641)
         Me.submit_btn.Name = "submit_btn"
         Me.submit_btn.Size = New System.Drawing.Size(97, 35)
         Me.submit_btn.TabIndex = 54
@@ -183,7 +191,7 @@ Partial Class Header_Transaction
         Me.label.AutoSize = True
         Me.label.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.label.Location = New System.Drawing.Point(689, 417)
+        Me.label.Location = New System.Drawing.Point(41, 457)
         Me.label.Name = "label"
         Me.label.Size = New System.Drawing.Size(94, 29)
         Me.label.TabIndex = 56
@@ -192,7 +200,7 @@ Partial Class Header_Transaction
         'price_box
         '
         Me.price_box.Enabled = False
-        Me.price_box.Location = New System.Drawing.Point(835, 479)
+        Me.price_box.Location = New System.Drawing.Point(187, 519)
         Me.price_box.Name = "price_box"
         Me.price_box.Size = New System.Drawing.Size(284, 22)
         Me.price_box.TabIndex = 59
@@ -202,7 +210,7 @@ Partial Class Header_Transaction
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(689, 472)
+        Me.Label5.Location = New System.Drawing.Point(41, 512)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(114, 29)
         Me.Label5.TabIndex = 58
@@ -210,7 +218,7 @@ Partial Class Header_Transaction
         '
         'total_box
         '
-        Me.total_box.Location = New System.Drawing.Point(835, 538)
+        Me.total_box.Location = New System.Drawing.Point(187, 578)
         Me.total_box.Name = "total_box"
         Me.total_box.Size = New System.Drawing.Size(284, 22)
         Me.total_box.TabIndex = 61
@@ -220,7 +228,7 @@ Partial Class Header_Transaction
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(689, 532)
+        Me.Label7.Location = New System.Drawing.Point(41, 572)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(116, 29)
         Me.Label7.TabIndex = 60
@@ -228,6 +236,7 @@ Partial Class Header_Transaction
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.check_btn)
         Me.GroupBox1.Controls.Add(Me.addres_label)
         Me.GroupBox1.Controls.Add(Me.Phone_box)
         Me.GroupBox1.Controls.Add(Me.name_label)
@@ -237,9 +246,9 @@ Partial Class Header_Transaction
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 389)
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 176)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(622, 310)
+        Me.GroupBox1.Size = New System.Drawing.Size(593, 251)
         Me.GroupBox1.TabIndex = 62
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Customer Identity"
@@ -248,7 +257,7 @@ Partial Class Header_Transaction
         '
         Me.addres_label.AutoSize = True
         Me.addres_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.addres_label.Location = New System.Drawing.Point(182, 216)
+        Me.addres_label.Location = New System.Drawing.Point(196, 169)
         Me.addres_label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.addres_label.Name = "addres_label"
         Me.addres_label.Size = New System.Drawing.Size(85, 25)
@@ -267,7 +276,7 @@ Partial Class Header_Transaction
         '
         Me.name_label.AutoSize = True
         Me.name_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.name_label.Location = New System.Drawing.Point(182, 163)
+        Me.name_label.Location = New System.Drawing.Point(196, 116)
         Me.name_label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.name_label.Name = "name_label"
         Me.name_label.Size = New System.Drawing.Size(64, 25)
@@ -289,7 +298,7 @@ Partial Class Header_Transaction
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(79, 213)
+        Me.Label10.Location = New System.Drawing.Point(93, 166)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(91, 25)
@@ -312,7 +321,7 @@ Partial Class Header_Transaction
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(89, 163)
+        Me.Label9.Location = New System.Drawing.Point(103, 116)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(75, 25)
@@ -322,7 +331,7 @@ Partial Class Header_Transaction
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(835, 421)
+        Me.ComboBox1.Location = New System.Drawing.Point(187, 461)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(284, 24)
         Me.ComboBox1.TabIndex = 63
@@ -330,10 +339,97 @@ Partial Class Header_Transaction
         'employe
         '
         Me.employe.Enabled = False
-        Me.employe.Location = New System.Drawing.Point(1096, 609)
+        Me.employe.Location = New System.Drawing.Point(968, 647)
         Me.employe.Name = "employe"
         Me.employe.Size = New System.Drawing.Size(30, 22)
         Me.employe.TabIndex = 64
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.CheckBox1.Location = New System.Drawing.Point(488, 463)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(105, 20)
+        Me.CheckBox1.TabIndex = 65
+        Me.CheckBox1.Text = "Use Prepaid"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(652, 461)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(128, 29)
+        Me.Label4.TabIndex = 66
+        Me.Label4.Text = "Total price"
+        '
+        'Estimation
+        '
+        Me.Estimation.AutoSize = True
+        Me.Estimation.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Estimation.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Estimation.Location = New System.Drawing.Point(652, 519)
+        Me.Estimation.Name = "Estimation"
+        Me.Estimation.Size = New System.Drawing.Size(125, 29)
+        Me.Estimation.TabIndex = 67
+        Me.Estimation.Text = "Estimation"
+        '
+        'estimation_label
+        '
+        Me.estimation_label.AutoSize = True
+        Me.estimation_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.estimation_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.estimation_label.Location = New System.Drawing.Point(814, 519)
+        Me.estimation_label.Name = "estimation_label"
+        Me.estimation_label.Size = New System.Drawing.Size(94, 29)
+        Me.estimation_label.TabIndex = 68
+        Me.estimation_label.Text = "Service"
+        '
+        'price_label
+        '
+        Me.price_label.AutoSize = True
+        Me.price_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.price_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.price_label.Location = New System.Drawing.Point(814, 461)
+        Me.price_label.Name = "price_label"
+        Me.price_label.Size = New System.Drawing.Size(94, 29)
+        Me.price_label.TabIndex = 69
+        Me.price_label.Text = "Service"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Location = New System.Drawing.Point(933, 519)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(54, 29)
+        Me.Label6.TabIndex = 70
+        Me.Label6.Text = "Day"
+        '
+        'add_btn
+        '
+        Me.add_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.add_btn.Location = New System.Drawing.Point(351, 641)
+        Me.add_btn.Name = "add_btn"
+        Me.add_btn.Size = New System.Drawing.Size(97, 35)
+        Me.add_btn.TabIndex = 71
+        Me.add_btn.Text = "Add"
+        Me.add_btn.UseVisualStyleBackColor = True
+        '
+        'check_btn
+        '
+        Me.check_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.check_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.check_btn.Location = New System.Drawing.Point(458, 200)
+        Me.check_btn.Name = "check_btn"
+        Me.check_btn.Size = New System.Drawing.Size(97, 35)
+        Me.check_btn.TabIndex = 72
+        Me.check_btn.Text = "Check"
+        Me.check_btn.UseVisualStyleBackColor = True
         '
         'Header_Transaction
         '
@@ -341,6 +437,13 @@ Partial Class Header_Transaction
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(1155, 711)
+        Me.Controls.Add(Me.add_btn)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.price_label)
+        Me.Controls.Add(Me.estimation_label)
+        Me.Controls.Add(Me.Estimation)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.employe)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.GroupBox1)
@@ -394,4 +497,12 @@ Partial Class Header_Transaction
     Friend WithEvents Label9 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents employe As TextBox
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Estimation As Label
+    Friend WithEvents estimation_label As Label
+    Friend WithEvents price_label As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents add_btn As Button
+    Friend WithEvents check_btn As Button
 End Class
