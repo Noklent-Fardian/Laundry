@@ -128,6 +128,9 @@ Public Class Header_Transaction
         If name_label.Text = "" Or
                 total_box.Text = "" Then
             MsgBox("Lengkapi data", MsgBoxStyle.Information, "Lengkapi")
+        ElseIf CheckBox1.Checked = True Then
+            query = "insert into header_transaction(id_employee,id_customer,transaction_date_time_header_transaction,complete_estimation_date_time_header_transaction)values('{0}','{1}','{2}','{3}')"
+            query = String.Format(query, employe, id_customer, DateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm"))
 
 
         End If
