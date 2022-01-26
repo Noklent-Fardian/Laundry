@@ -73,6 +73,20 @@ Public Class Prepaid_Package
         Call kondisiawal()
     End Sub
 
+    Private Sub search_box_TextChanged(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
+        If e.KeyChar = Chr(13) Then
+            query = "select a.id,b.name_customer 'Customer', concat(c.name_service,' ',d.total_unit,' ',e.name_unit ) 'Package',a.price from prepaid_package a, customer b,service c, package d,unit e where a.id_customer=b.id and  a.id_package=d.id and d.id_service=c.id and c.id_unit=e.id and b.name_customer like '%" & search_box.Text & "%'"
+            datagrid_view.AutoGenerateColumns = True
+            datagrid_view.DataSource = read(query)
+
+        End If
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
     Private Sub submit_btn_Click(sender As Object, e As EventArgs) Handles submit_btn.Click
         If ComboBox1.Text = "" Or
                 name_label.Text = "" Then
