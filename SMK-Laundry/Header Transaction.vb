@@ -28,6 +28,18 @@ Public Class Header_Transaction
         ComboBox1.DisplayMember = "name_service"
 
     End Sub
+    Sub delete_btn()
+        Dim delete As New DataGridViewButtonColumn
+        delete.HeaderText = "Action"
+        delete.Text = "Delete"
+        delete.Name = "Delete"
+        delete.FlatStyle = FlatStyle.Flat
+        delete.UseColumnTextForButtonValue = True
+        datagrid_view.Columns.Add(delete)
+    End Sub
+    Sub remove()
+        datagrid_view.Columns.RemoveAt(5)
+    End Sub
     Sub price()
         Call koneksi()
         query = "select  a.price_unit_service*b.total_unit_transaction from service a, detail_trasaction b"
@@ -83,6 +95,7 @@ Public Class Header_Transaction
                 name_label.Text = ""
                 addres_label.Text = ""
             End If
+
         End If
 
 
@@ -127,6 +140,8 @@ Public Class Header_Transaction
         Else
             query = "select a.name_service,c.id 'Prepaid Package',a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b, prepaid_package c,unit d,header_transaction e where b.id_service=a.id and b.id_prepaid_transaction=c.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
             datagrid_view.DataSource = read(query)
+            Call delete_btn()
+
 
 
         End If

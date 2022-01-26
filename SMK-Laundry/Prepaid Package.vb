@@ -87,6 +87,10 @@ Public Class Prepaid_Package
 
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
     Private Sub submit_btn_Click(sender As Object, e As EventArgs) Handles submit_btn.Click
         If ComboBox1.Text = "" Or
                 name_label.Text = "" Then

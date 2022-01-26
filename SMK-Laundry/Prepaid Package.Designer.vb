@@ -29,6 +29,8 @@ Partial Class Prepaid_Package
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.search_box = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.refresh_btn = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -48,8 +50,6 @@ Partial Class Prepaid_Package
         Me.reset_btn = New System.Windows.Forms.Button()
         Me.submit_btn = New System.Windows.Forms.Button()
         Me.datagrid_view = New System.Windows.Forms.DataGridView()
-        Me.search_box = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +114,25 @@ Partial Class Prepaid_Package
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1165, 103)
         Me.Panel1.TabIndex = 46
+        '
+        'search_box
+        '
+        Me.search_box.Location = New System.Drawing.Point(896, 38)
+        Me.search_box.Name = "search_box"
+        Me.search_box.Size = New System.Drawing.Size(223, 22)
+        Me.search_box.TabIndex = 46
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label4.Location = New System.Drawing.Point(786, 38)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(75, 25)
+        Me.Label4.TabIndex = 45
+        Me.Label4.Text = "Search"
         '
         'refresh_btn
         '
@@ -329,25 +348,6 @@ Partial Class Prepaid_Package
         Me.datagrid_view.RowTemplate.Height = 24
         Me.datagrid_view.Size = New System.Drawing.Size(1165, 222)
         Me.datagrid_view.TabIndex = 65
-        '
-        'search_box
-        '
-        Me.search_box.Location = New System.Drawing.Point(896, 38)
-        Me.search_box.Name = "search_box"
-        Me.search_box.Size = New System.Drawing.Size(223, 22)
-        Me.search_box.TabIndex = 46
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(786, 38)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(75, 25)
-        Me.Label4.TabIndex = 45
-        Me.Label4.Text = "Search"
         '
         'Prepaid_Package
         '
