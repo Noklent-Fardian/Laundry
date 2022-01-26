@@ -149,7 +149,7 @@ Partial Class MainMenu
         'Button5
         '
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(511, 443)
+        Me.Button5.Location = New System.Drawing.Point(545, 443)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(264, 145)
         Me.Button5.TabIndex = 12
@@ -159,7 +159,7 @@ Partial Class MainMenu
         'Button6
         '
         Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(135, 443)
+        Me.Button6.Location = New System.Drawing.Point(183, 443)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(286, 145)
         Me.Button6.TabIndex = 13

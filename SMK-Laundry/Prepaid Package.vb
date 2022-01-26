@@ -26,11 +26,6 @@ Public Class Prepaid_Package
         ComboBox1.DisplayMember = "name_service"
         ComboBox1.ValueMember = "name_service"
     End Sub
-    Sub remove_btn()
-
-        datagrid_view.Columns.RemoveAt(6)
-
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MainMenu.Show()
@@ -66,20 +61,10 @@ Public Class Prepaid_Package
         price_box.Text = datagrid_view.CurrentRow.Cells(5).Value
     End Sub
 
-    Sub add_btn()
-        Dim select_btn As New DataGridViewButtonColumn
-        select_btn.headertext = "Action"
-        select_btn.Text = "Select"
-        select_btn.HeaderText = "select"
-        select_btn.FlatStyle = FlatStyle.Flat
-        select_btn.UseColumnTextForButtonValue = True
-        datagrid_view.Columns.Add(select_btn)
-    End Sub
 
     Sub kondisiawal()
-        query = "select a.id,d.name_customer 'Customer',b.name_service'Service',a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price' from detail_transaction a,service b,header_transaction c,customer d where a.id_service=b.id and a.id_header_transactionr=c.id and c.id_customer=d.id"
+        query = "select a.id,b.name_customer 'Customer',c.name_service 'Package',a.price from prepaid_package a, customer b,service c, package d where a.id_customer=b.id and  a.id_package=d.id and d.id_service=c.id"
         datagrid_view.DataSource = read(query)
-        Call add_btn()
         Call kosong()
     End Sub
 
@@ -96,24 +81,15 @@ Public Class Prepaid_Package
             query = "insert into prepaid_package(id_customer,id_package,price,start_date) values('{0}','{1}','{2}','{3}')"
             query = String.Format(query, id_customer, id_package, price_box.Text, DateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm"))
             aksi(query)
-            Call koneksi()
-            query = "select top (1) * from prepaid_package order by id desc"
-            cmd = New SqlCommand(query, conn)
-            dr = cmd.ExecuteReader
-            dr.Read()
-            If dr.HasRows Then
-                id_prepaid = dr.Item("id")
-            End If
-            query = "update detail_transaction set id_prepaid_transaction='" & id_prepaid & "' where id='" & id_boc.Text & "'"
-            aksi(query)
+
             MsgBox("Insert Data PrepaidPackage Berhasil ", MsgBoxStyle.Information, "Information")
-            Call remove_btn()
+
             Call kondisiawal()
         End If
     End Sub
 
     Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
-        Call remove_btn()
+
         Call kondisiawal()
 
 
