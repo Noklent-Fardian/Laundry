@@ -4,7 +4,8 @@ Public Class Header_Transaction
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
-    Dim query, id_service, id_customer, id_transaction, price_detail As String
+    Dim query, id_service, id_customer, id_transaction, price_detail, duration As String
+
     Sub koneksi()
         conn = New SqlConnection("Server=NOX; Database=Laundry; Integrated Security=True")
         If conn.State = ConnectionState.Closed Then
@@ -40,19 +41,31 @@ Public Class Header_Transaction
     Sub remove()
         datagrid_view.Columns.RemoveAt(5)
     End Sub
-
-    Sub price()
+    Sub estimation1()
         Call koneksi()
-        query = "select  a.price_unit_service*b.total_unit_transaction from service a, detail_trasaction b"
+        query = "select dateadd(day,a.estimation_duration_service,b.transaction_date_time_header_transaction) as coba from service a,header_transaction b, detail_transaction c where c.id_service=a.id and c.id_header_transactionr=b.id "
         cmd = New SqlCommand(query, conn)
         dr = cmd.ExecuteReader
         dr.Read()
-        price_detail = dr.Item(query)
+        duration = dr.Item("coba")
+        estimation_label.Text = duration
+
+    End Sub
+    Sub price1()
+        Call koneksi()
+        query = "select  a.price_unit_service*b.total_unit_transaction as total from service a, detail_transaction b where b.id_service=a.id"
+        cmd = New SqlCommand(query, conn)
+        dr = cmd.ExecuteReader
+        dr.Read()
+        price_detail = dr.Item("total")
+        price_label.Text = price_detail
+
     End Sub
 
     Private Sub Header_Transaction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call kosong()
         Call service()
+        refresh_btn.Enabled = False
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -123,6 +136,8 @@ Public Class Header_Transaction
 
     Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
         Call kosong()
+        Call remove()
+        Call delete_btn()
     End Sub
 
     Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
@@ -142,11 +157,13 @@ Public Class Header_Transaction
             MsgBox("Lengkapi data", MsgBoxStyle.Information, "Lengkapi")
 
         Else
-            query = "select a.name_service,c.id 'Prepaid Package',a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b, prepaid_package c,unit d,header_transaction e where b.id_service=a.id and b.id_prepaid_transaction=c.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
+            query = "select e.id, a.name_service,c.id 'Prepaid Package',a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b, prepaid_package c,unit d,header_transaction e where b.id_service=a.id and b.id_prepaid_transaction=c.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
             datagrid_view.DataSource = read(query)
+            Call estimation1()
+            Call price1()
             Call delete_btn()
-
-
+            check_btn.Enabled = False
+            refresh_btn.Enabled = True
 
         End If
     End Sub
