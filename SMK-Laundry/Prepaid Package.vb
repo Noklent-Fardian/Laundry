@@ -32,6 +32,7 @@ Public Class Prepaid_Package
         Me.Hide()
     End Sub
 
+
     Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
         Customer.Show()
     End Sub
@@ -58,7 +59,7 @@ Public Class Prepaid_Package
 
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
         id_boc.Text = datagrid_view.CurrentRow.Cells(0).Value
-        price_box.Text = datagrid_view.CurrentRow.Cells(5).Value
+        price_box.Text = datagrid_view.CurrentRow.Cells(3).Value
     End Sub
 
 

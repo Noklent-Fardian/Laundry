@@ -40,7 +40,6 @@ Partial Class Header_Transaction
         Me.total_box = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.check_btn = New System.Windows.Forms.Button()
         Me.addres_label = New System.Windows.Forms.Label()
         Me.Phone_box = New System.Windows.Forms.TextBox()
         Me.name_label = New System.Windows.Forms.Label()
@@ -50,13 +49,13 @@ Partial Class Header_Transaction
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.employe = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Estimation = New System.Windows.Forms.Label()
         Me.estimation_label = New System.Windows.Forms.Label()
         Me.price_label = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.add_btn = New System.Windows.Forms.Button()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -156,14 +155,14 @@ Partial Class Header_Transaction
         Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datagrid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.datagrid_view.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.datagrid_view.Location = New System.Drawing.Point(599, 189)
+        Me.datagrid_view.Location = New System.Drawing.Point(645, 273)
         Me.datagrid_view.Name = "datagrid_view"
         Me.datagrid_view.ReadOnly = True
         Me.datagrid_view.RowHeadersWidth = 51
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
         Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.datagrid_view.RowTemplate.Height = 24
-        Me.datagrid_view.Size = New System.Drawing.Size(553, 238)
+        Me.datagrid_view.Size = New System.Drawing.Size(286, 99)
         Me.datagrid_view.TabIndex = 53
         '
         'reset_btn
@@ -236,7 +235,6 @@ Partial Class Header_Transaction
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.check_btn)
         Me.GroupBox1.Controls.Add(Me.addres_label)
         Me.GroupBox1.Controls.Add(Me.Phone_box)
         Me.GroupBox1.Controls.Add(Me.name_label)
@@ -252,17 +250,6 @@ Partial Class Header_Transaction
         Me.GroupBox1.TabIndex = 62
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Customer Identity"
-        '
-        'check_btn
-        '
-        Me.check_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.check_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.check_btn.Location = New System.Drawing.Point(458, 200)
-        Me.check_btn.Name = "check_btn"
-        Me.check_btn.Size = New System.Drawing.Size(97, 35)
-        Me.check_btn.TabIndex = 72
-        Me.check_btn.Text = "Check"
-        Me.check_btn.UseVisualStyleBackColor = True
         '
         'addres_label
         '
@@ -355,17 +342,6 @@ Partial Class Header_Transaction
         Me.employe.Size = New System.Drawing.Size(30, 22)
         Me.employe.TabIndex = 64
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.CheckBox1.Location = New System.Drawing.Point(488, 463)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(105, 20)
-        Me.CheckBox1.TabIndex = 65
-        Me.CheckBox1.Text = "Use Prepaid"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -393,7 +369,7 @@ Partial Class Header_Transaction
         Me.estimation_label.AutoSize = True
         Me.estimation_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.estimation_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.estimation_label.Location = New System.Drawing.Point(814, 519)
+        Me.estimation_label.Location = New System.Drawing.Point(837, 519)
         Me.estimation_label.Name = "estimation_label"
         Me.estimation_label.Size = New System.Drawing.Size(94, 29)
         Me.estimation_label.TabIndex = 68
@@ -404,7 +380,7 @@ Partial Class Header_Transaction
         Me.price_label.AutoSize = True
         Me.price_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.price_label.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.price_label.Location = New System.Drawing.Point(814, 461)
+        Me.price_label.Location = New System.Drawing.Point(837, 461)
         Me.price_label.Name = "price_label"
         Me.price_label.Size = New System.Drawing.Size(94, 29)
         Me.price_label.TabIndex = 69
@@ -415,7 +391,7 @@ Partial Class Header_Transaction
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(933, 519)
+        Me.Label6.Location = New System.Drawing.Point(1007, 519)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(54, 29)
         Me.Label6.TabIndex = 70
@@ -431,21 +407,30 @@ Partial Class Header_Transaction
         Me.add_btn.Text = "Add"
         Me.add_btn.UseVisualStyleBackColor = True
         '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Enabled = False
+        Me.DateTimePicker2.Location = New System.Drawing.Point(649, 225)
+        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(4)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(313, 22)
+        Me.DateTimePicker2.TabIndex = 72
+        '
         'Header_Transaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(1155, 711)
+        Me.Controls.Add(Me.datagrid_view)
+        Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.add_btn)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.price_label)
         Me.Controls.Add(Me.estimation_label)
         Me.Controls.Add(Me.Estimation)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.employe)
-        Me.Controls.Add(Me.datagrid_view)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.total_box)
@@ -497,12 +482,11 @@ Partial Class Header_Transaction
     Friend WithEvents Label9 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents employe As TextBox
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Estimation As Label
     Friend WithEvents estimation_label As Label
     Friend WithEvents price_label As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents add_btn As Button
-    Friend WithEvents check_btn As Button
+    Friend WithEvents DateTimePicker2 As DateTimePicker
 End Class
