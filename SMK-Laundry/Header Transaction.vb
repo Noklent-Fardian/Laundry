@@ -40,6 +40,7 @@ Public Class Header_Transaction
     Sub remove()
         datagrid_view.Columns.RemoveAt(5)
     End Sub
+
     Sub price()
         Call koneksi()
         query = "select  a.price_unit_service*b.total_unit_transaction from service a, detail_trasaction b"
@@ -159,6 +160,8 @@ Public Class Header_Transaction
         total_box.Text = ""
         name_label.Text = ""
         addres_label.Text = ""
+        price_label.Text = ""
+        estimation_label.Text = ""
         CheckBox1.Checked = False
 
     End Sub

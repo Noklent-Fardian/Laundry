@@ -63,7 +63,7 @@ Public Class Prepaid_Package
 
 
     Sub kondisiawal()
-        query = "select a.id,b.name_customer 'Customer', concat(c.name_service,' ',d.total_unit,' ',e.name_unit ) 'Package',a.price from prepaid_package a, customer b,service c, package d,unit e where a.id_customer=b.id and  a.id_package=d.id and d.id_service=c.id and c.id_unit=e.id"
+        query = "select a.id,b.name_customer 'Customer', concat(c.name_service,' ',d.total_unit,' ',e.name_unit ) 'Package',a.price,d.total_unit*a.price 'Price Total' ,dateadd(day,c.estimation_duration_service,a.start_date)'Estimation'from prepaid_package a, customer b,service c, package d,unit e where a.id_customer=b.id and  a.id_package=d.id and d.id_service=c.id and c.id_unit=e.id"
         datagrid_view.DataSource = read(query)
         Call kosong()
     End Sub
