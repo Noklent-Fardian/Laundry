@@ -73,9 +73,16 @@ Public Class Header_Transaction
     End Sub
 
     Private Sub Header_Transaction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Call kosong()
         Call service()
+        Call submit()
 
+    End Sub
+    Sub submit()
+        Call kosong()
+        Call semikosong()
+        id_box.Text = ""
+        add_btn.Enabled = False
+        depo_btn.Enabled = True
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -142,12 +149,13 @@ Public Class Header_Transaction
             name_label.Text = "" Then
             MsgBox("Isi semua Kolom", MsgBoxStyle.Information, "Belum Lengkap")
         Else
+            Call submit()
 
         End If
 
     End Sub
 
-    Private Sub depo_box_Click(sender As Object, e As EventArgs) Handles depo_box.Click
+    Private Sub depo_box_Click(sender As Object, e As EventArgs) Handles depo_btn.Click
         If name_label.Text = "" Then
 
             MsgBox("Lengkapi data", MsgBoxStyle.Information, "Lengkapi")
@@ -164,11 +172,13 @@ Public Class Header_Transaction
                 id_header = dr.Item("id")
             End If
             id_box.Text = id_header
+            depo_btn.Enabled = False
             Call remove()
             Call delete_btn()
             Call kondisiawal()
 
         End If
+
 
     End Sub
 

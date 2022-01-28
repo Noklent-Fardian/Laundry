@@ -55,7 +55,7 @@ Partial Class Header_Transaction
         Me.add_btn = New System.Windows.Forms.Button()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.id_box = New System.Windows.Forms.TextBox()
-        Me.depo_box = New System.Windows.Forms.Button()
+        Me.depo_btn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -224,7 +224,7 @@ Partial Class Header_Transaction
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.depo_box)
+        Me.GroupBox1.Controls.Add(Me.depo_btn)
         Me.GroupBox1.Controls.Add(Me.addres_label)
         Me.GroupBox1.Controls.Add(Me.Phone_box)
         Me.GroupBox1.Controls.Add(Me.name_label)
@@ -403,16 +403,16 @@ Partial Class Header_Transaction
         Me.id_box.Size = New System.Drawing.Size(284, 22)
         Me.id_box.TabIndex = 73
         '
-        'depo_box
+        'depo_btn
         '
-        Me.depo_box.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.depo_box.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.depo_box.Location = New System.Drawing.Point(464, 167)
-        Me.depo_box.Name = "depo_box"
-        Me.depo_box.Size = New System.Drawing.Size(97, 35)
-        Me.depo_box.TabIndex = 74
-        Me.depo_box.Text = "Deposit"
-        Me.depo_box.UseVisualStyleBackColor = True
+        Me.depo_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.depo_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.depo_btn.Location = New System.Drawing.Point(464, 167)
+        Me.depo_btn.Name = "depo_btn"
+        Me.depo_btn.Size = New System.Drawing.Size(97, 35)
+        Me.depo_btn.TabIndex = 74
+        Me.depo_btn.Text = "Deposit"
+        Me.depo_btn.UseVisualStyleBackColor = True
         '
         'Header_Transaction
         '
@@ -486,5 +486,5 @@ Partial Class Header_Transaction
     Friend WithEvents add_btn As Button
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents id_box As TextBox
-    Friend WithEvents depo_box As Button
+    Friend WithEvents depo_btn As Button
 End Class
