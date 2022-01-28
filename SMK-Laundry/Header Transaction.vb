@@ -173,14 +173,16 @@ Public Class Header_Transaction
             End If
             id_box.Text = id_header
             depo_btn.Enabled = False
+            add_btn.Enabled = True
             Call remove()
-            Call delete_btn()
             Call kondisiawal()
 
         End If
 
 
     End Sub
+
+
 
     Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
         If name_label.Text = "" Or
@@ -196,9 +198,6 @@ Public Class Header_Transaction
             Call price1()
             Call remove()
             Call kondisiawal()
-
-
-
         End If
     End Sub
 

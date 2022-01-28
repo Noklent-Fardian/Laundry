@@ -22,8 +22,8 @@ Partial Class Header_Transaction
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -39,6 +39,7 @@ Partial Class Header_Transaction
         Me.total_box = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.depo_btn = New System.Windows.Forms.Button()
         Me.addres_label = New System.Windows.Forms.Label()
         Me.Phone_box = New System.Windows.Forms.TextBox()
         Me.name_label = New System.Windows.Forms.Label()
@@ -55,7 +56,6 @@ Partial Class Header_Transaction
         Me.add_btn = New System.Windows.Forms.Button()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.id_box = New System.Windows.Forms.TextBox()
-        Me.depo_btn = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -134,24 +134,24 @@ Partial Class Header_Transaction
         '
         Me.datagrid_view.AllowUserToAddRows = False
         Me.datagrid_view.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.datagrid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.datagrid_view.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.datagrid_view.Location = New System.Drawing.Point(582, 532)
+        Me.datagrid_view.Location = New System.Drawing.Point(602, 191)
         Me.datagrid_view.Name = "datagrid_view"
         Me.datagrid_view.ReadOnly = True
         Me.datagrid_view.RowHeadersWidth = 51
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle2
         Me.datagrid_view.RowTemplate.Height = 24
-        Me.datagrid_view.Size = New System.Drawing.Size(198, 137)
+        Me.datagrid_view.Size = New System.Drawing.Size(541, 236)
         Me.datagrid_view.TabIndex = 53
         '
         'reset_btn
@@ -240,6 +240,17 @@ Partial Class Header_Transaction
         Me.GroupBox1.TabIndex = 62
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Customer Identity"
+        '
+        'depo_btn
+        '
+        Me.depo_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.depo_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.depo_btn.Location = New System.Drawing.Point(464, 167)
+        Me.depo_btn.Name = "depo_btn"
+        Me.depo_btn.Size = New System.Drawing.Size(97, 35)
+        Me.depo_btn.TabIndex = 74
+        Me.depo_btn.Text = "Deposit"
+        Me.depo_btn.UseVisualStyleBackColor = True
         '
         'addres_label
         '
@@ -403,24 +414,12 @@ Partial Class Header_Transaction
         Me.id_box.Size = New System.Drawing.Size(284, 22)
         Me.id_box.TabIndex = 73
         '
-        'depo_btn
-        '
-        Me.depo_btn.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.depo_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.depo_btn.Location = New System.Drawing.Point(464, 167)
-        Me.depo_btn.Name = "depo_btn"
-        Me.depo_btn.Size = New System.Drawing.Size(97, 35)
-        Me.depo_btn.TabIndex = 74
-        Me.depo_btn.Text = "Deposit"
-        Me.depo_btn.UseVisualStyleBackColor = True
-        '
         'Header_Transaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(1155, 711)
-        Me.Controls.Add(Me.id_box)
         Me.Controls.Add(Me.datagrid_view)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.add_btn)
@@ -443,6 +442,7 @@ Partial Class Header_Transaction
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.id_box)
         Me.Name = "Header_Transaction"
         Me.Text = "Header Transaction"
         Me.Panel1.ResumeLayout(False)
