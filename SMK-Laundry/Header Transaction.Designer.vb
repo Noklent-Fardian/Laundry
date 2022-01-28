@@ -54,6 +54,8 @@ Partial Class Header_Transaction
         Me.price_label = New System.Windows.Forms.Label()
         Me.add_btn = New System.Windows.Forms.Button()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.id_box = New System.Windows.Forms.TextBox()
+        Me.depo_box = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.datagrid_view, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -142,14 +144,14 @@ Partial Class Header_Transaction
         Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.datagrid_view.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.datagrid_view.Location = New System.Drawing.Point(599, 194)
+        Me.datagrid_view.Location = New System.Drawing.Point(582, 532)
         Me.datagrid_view.Name = "datagrid_view"
         Me.datagrid_view.ReadOnly = True
         Me.datagrid_view.RowHeadersWidth = 51
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid_view.RowTemplate.Height = 24
-        Me.datagrid_view.Size = New System.Drawing.Size(544, 233)
+        Me.datagrid_view.Size = New System.Drawing.Size(198, 137)
         Me.datagrid_view.TabIndex = 53
         '
         'reset_btn
@@ -222,6 +224,7 @@ Partial Class Header_Transaction
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.depo_box)
         Me.GroupBox1.Controls.Add(Me.addres_label)
         Me.GroupBox1.Controls.Add(Me.Phone_box)
         Me.GroupBox1.Controls.Add(Me.name_label)
@@ -392,12 +395,32 @@ Partial Class Header_Transaction
         Me.DateTimePicker2.TabIndex = 72
         Me.DateTimePicker2.Value = New Date(2022, 1, 28, 0, 0, 0, 0)
         '
+        'id_box
+        '
+        Me.id_box.Enabled = False
+        Me.id_box.Location = New System.Drawing.Point(657, 273)
+        Me.id_box.Name = "id_box"
+        Me.id_box.Size = New System.Drawing.Size(284, 22)
+        Me.id_box.TabIndex = 73
+        '
+        'depo_box
+        '
+        Me.depo_box.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.depo_box.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.depo_box.Location = New System.Drawing.Point(464, 167)
+        Me.depo_box.Name = "depo_box"
+        Me.depo_box.Size = New System.Drawing.Size(97, 35)
+        Me.depo_box.TabIndex = 74
+        Me.depo_box.Text = "Deposit"
+        Me.depo_box.UseVisualStyleBackColor = True
+        '
         'Header_Transaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkCyan
         Me.ClientSize = New System.Drawing.Size(1155, 711)
+        Me.Controls.Add(Me.id_box)
         Me.Controls.Add(Me.datagrid_view)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.add_btn)
@@ -462,4 +485,6 @@ Partial Class Header_Transaction
     Friend WithEvents price_label As Label
     Friend WithEvents add_btn As Button
     Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents id_box As TextBox
+    Friend WithEvents depo_box As Button
 End Class

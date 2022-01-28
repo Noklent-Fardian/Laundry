@@ -6,6 +6,7 @@ Public Class Header_Transaction
     Dim dr As SqlDataReader
     Dim query, id_service, id_customer, id_header, price_detail, duration As String
 
+
     Sub koneksi()
         conn = New SqlConnection("Server=NOX; Database=Laundry; Integrated Security=True")
         If conn.State = ConnectionState.Closed Then
@@ -66,7 +67,7 @@ Public Class Header_Transaction
     End Sub
     Sub kondisiawal()
         Call semikosong()
-        query = "select b.id, a.name_service,a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b, prepaid_package c,unit d,header_transaction e where b.id_service=a.id and b.id_prepaid_transaction=c.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
+        query = "select b.id, a.name_service,a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b,unit d,header_transaction e where b.id_service=a.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
         datagrid_view.DataSource = read(query)
         Call delete_btn()
     End Sub
@@ -113,13 +114,13 @@ Public Class Header_Transaction
                 id_customer = dr.Item("id")
                 name_label.Text = " " + dr.Item("name_customer") + ""
                 addres_label.Text = "" + dr.Item("addres_customer") + " "
-
                 Call kondisiawal()
 
             Else
                 MsgBox("Customer Tidak Ditemukan", MsgBoxStyle.Information, "Missing")
                 name_label.Text = ""
                 addres_label.Text = ""
+
             End If
 
         End If
@@ -146,17 +147,13 @@ Public Class Header_Transaction
 
     End Sub
 
-
-    Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
-        If name_label.Text = "" Or
-                total_box.Text = "" Then
+    Private Sub depo_box_Click(sender As Object, e As EventArgs) Handles depo_box.Click
+        If name_label.Text = "" Then
 
             MsgBox("Lengkapi data", MsgBoxStyle.Information, "Lengkapi")
         Else
-            query = "insert into header_transaction(id_employee,id_customer,transaction_date_time_header_transaction,complete_estimation_date_time_header_transaction)values('{0}','{1}','{2}','{3}')"
-            query = String.Format(query, employe.Text, id_customer, DateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm"), DateTimePicker2.Value.ToString("yyyy-MM-dd hh:mm"))
-            aksi(query)
-            MsgBox("Tambah berhasil", MsgBoxStyle.Information, "Berhasil")
+            query = "insert into header_transaction(id_employee,id_customer,transaction_date_time_header_transaction)values('{0}','{1}','{2}')"
+            query = String.Format(query, employe.Text, id_customer, DateTimePicker1.Value.ToString("yyyy/MM/dd hh:mm"))
             aksi(query)
             Call koneksi()
             query = "select top (1) * from header_transaction order by id desc"
@@ -166,8 +163,23 @@ Public Class Header_Transaction
             If dr.HasRows Then
                 id_header = dr.Item("id")
             End If
-            query = "insert into detail_transaction(id_header_transactionr,id_service,id_prepaid_transaction,price_detail_transaction,total_unit_transaction) values('{0}','{1}',' ','{2}','{3}')"
-            query = String.Format(query, id_header, id_service, price_box.Text, total_box.Text)
+            id_box.Text = id_header
+            Call remove()
+            Call delete_btn()
+            Call kondisiawal()
+
+        End If
+
+    End Sub
+
+    Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
+        If name_label.Text = "" Or
+                total_box.Text = "" Then
+
+            MsgBox("Lengkapi data", MsgBoxStyle.Information, "Lengkapi")
+        Else
+            query = "insert into detail_transaction(id_header_transactionr,id_service,price_detail_transaction,total_unit_transaction) values('{0}','{1}','{2}','{3}')"
+            query = String.Format(query, id_box.Text, id_service, price_box.Text, total_box.Text)
             aksi(query)
             MsgBox("Header berhasila", MsgBoxStyle.Information, "Berhasil")
             Call estimation1()
