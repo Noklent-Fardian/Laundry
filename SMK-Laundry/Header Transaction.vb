@@ -4,7 +4,7 @@ Public Class Header_Transaction
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
-    Dim query, id_service, id_customer, id_transaction, price_detail, duration As String
+    Dim query, id_service, id_customer, id_header, price_detail, duration As String
 
     Sub koneksi()
         conn = New SqlConnection("Server=NOX; Database=Laundry; Integrated Security=True")
@@ -39,22 +39,24 @@ Public Class Header_Transaction
         datagrid_view.Columns.Add(delete)
     End Sub
     Sub remove()
+        datagrid_view.Columns.RemoveAt(5)
 
     End Sub
     Sub estimation1()
         Call koneksi()
-        query = "select dateadd(day,a.estimation_duration_service,b.transaction_date_time_header_transaction) as coba from service a,header_transaction b, detail_transaction c where c.id_service=a.id and c.id_header_transactionr=b.id "
+        query = "select dateadd(day,a.estimation_duration_service,b.transaction_date_time_header_transaction) as coba from service a,header_transaction b, detail_transaction c where c.id_service=a.id and c.id_header_transactionr=b.id and b.id_customer='" & id_customer & "'"
         cmd = New SqlCommand(query, conn)
         dr = cmd.ExecuteReader
         dr.Read()
         duration = dr.Item("coba")
-        estimation_label.Text = duration
         DateTimePicker2.Value = duration
+        estimation_label.Text = DateTimePicker2.Value
+
 
     End Sub
     Sub price1()
         Call koneksi()
-        query = "select  a.price_unit_service*b.total_unit_transaction as total from service a, detail_transaction b where b.id_service=a.id"
+        query = "select  a.price_unit_service*b.total_unit_transaction as total from service a, detail_transaction b, header_transaction c where b.id_service=a.id and b.id_header_transactionr=c.id and c.id_customer='" & id_customer & "'"
         cmd = New SqlCommand(query, conn)
         dr = cmd.ExecuteReader
         dr.Read()
@@ -64,7 +66,7 @@ Public Class Header_Transaction
     End Sub
     Sub kondisiawal()
         Call semikosong()
-        query = "select e.id, a.name_service,a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b, prepaid_package c,unit d,header_transaction e where b.id_service=a.id and b.id_prepaid_transaction=c.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
+        query = "select b.id, a.name_service,a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b, prepaid_package c,unit d,header_transaction e where b.id_service=a.id and b.id_prepaid_transaction=c.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
         datagrid_view.DataSource = read(query)
         Call delete_btn()
     End Sub
@@ -111,9 +113,9 @@ Public Class Header_Transaction
                 id_customer = dr.Item("id")
                 name_label.Text = " " + dr.Item("name_customer") + ""
                 addres_label.Text = "" + dr.Item("addres_customer") + " "
-                Call estimation1()
-                Call price1()
+
                 Call kondisiawal()
+
             Else
                 MsgBox("Customer Tidak Ditemukan", MsgBoxStyle.Information, "Missing")
                 name_label.Text = ""
@@ -144,12 +146,6 @@ Public Class Header_Transaction
 
     End Sub
 
-    Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
-        Call kosong()
-        Call remove()
-        Call kondisiawal()
-
-    End Sub
 
     Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
         If name_label.Text = "" Or
@@ -161,8 +157,24 @@ Public Class Header_Transaction
             query = String.Format(query, employe.Text, id_customer, DateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm"), DateTimePicker2.Value.ToString("yyyy-MM-dd hh:mm"))
             aksi(query)
             MsgBox("Tambah berhasil", MsgBoxStyle.Information, "Berhasil")
+            aksi(query)
+            Call koneksi()
+            query = "select top (1) * from header_transaction order by id desc"
+            cmd = New SqlCommand(query, conn)
+            dr = cmd.ExecuteReader
+            dr.Read()
+            If dr.HasRows Then
+                id_header = dr.Item("id")
+            End If
+            query = "insert into detail_transaction(id_header_transactionr,id_service,id_prepaid_transaction,price_detail_transaction,total_unit_transaction) values('{0}','{1}',' ','{2}','{3}')"
+            query = String.Format(query, id_header, id_service, price_box.Text, total_box.Text)
+            aksi(query)
+            MsgBox("Header berhasila", MsgBoxStyle.Information, "Berhasil")
+            Call estimation1()
+            Call price1()
             Call remove()
             Call kondisiawal()
+
 
 
         End If

@@ -22,14 +22,13 @@ Partial Class Header_Transaction
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.refresh_btn = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.datagrid_view = New System.Windows.Forms.DataGridView()
         Me.reset_btn = New System.Windows.Forms.Button()
@@ -53,7 +52,6 @@ Partial Class Header_Transaction
         Me.Estimation = New System.Windows.Forms.Label()
         Me.estimation_label = New System.Windows.Forms.Label()
         Me.price_label = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.add_btn = New System.Windows.Forms.Button()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
@@ -111,23 +109,12 @@ Partial Class Header_Transaction
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel1.Controls.Add(Me.refresh_btn)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Location = New System.Drawing.Point(0, 66)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1165, 103)
         Me.Panel1.TabIndex = 51
-        '
-        'refresh_btn
-        '
-        Me.refresh_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.refresh_btn.Location = New System.Drawing.Point(72, 32)
-        Me.refresh_btn.Name = "refresh_btn"
-        Me.refresh_btn.Size = New System.Drawing.Size(97, 35)
-        Me.refresh_btn.TabIndex = 44
-        Me.refresh_btn.Text = "Refresh"
-        Me.refresh_btn.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -145,24 +132,24 @@ Partial Class Header_Transaction
         '
         Me.datagrid_view.AllowUserToAddRows = False
         Me.datagrid_view.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.datagrid_view.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.datagrid_view.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.datagrid_view.Location = New System.Drawing.Point(645, 273)
+        Me.datagrid_view.Location = New System.Drawing.Point(599, 194)
         Me.datagrid_view.Name = "datagrid_view"
         Me.datagrid_view.ReadOnly = True
         Me.datagrid_view.RowHeadersWidth = 51
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.datagrid_view.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid_view.RowTemplate.Height = 24
-        Me.datagrid_view.Size = New System.Drawing.Size(286, 99)
+        Me.datagrid_view.Size = New System.Drawing.Size(544, 233)
         Me.datagrid_view.TabIndex = 53
         '
         'reset_btn
@@ -386,17 +373,6 @@ Partial Class Header_Transaction
         Me.price_label.TabIndex = 69
         Me.price_label.Text = "Service"
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label6.Location = New System.Drawing.Point(1007, 519)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(54, 29)
-        Me.Label6.TabIndex = 70
-        Me.Label6.Text = "Day"
-        '
         'add_btn
         '
         Me.add_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -409,12 +385,12 @@ Partial Class Header_Transaction
         '
         'DateTimePicker2
         '
-        Me.DateTimePicker2.Enabled = False
         Me.DateTimePicker2.Location = New System.Drawing.Point(649, 225)
         Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(4)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(313, 22)
         Me.DateTimePicker2.TabIndex = 72
+        Me.DateTimePicker2.Value = New Date(2022, 1, 28, 0, 0, 0, 0)
         '
         'Header_Transaction
         '
@@ -425,7 +401,6 @@ Partial Class Header_Transaction
         Me.Controls.Add(Me.datagrid_view)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.add_btn)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.price_label)
         Me.Controls.Add(Me.estimation_label)
         Me.Controls.Add(Me.Estimation)
@@ -462,7 +437,6 @@ Partial Class Header_Transaction
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents refresh_btn As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents datagrid_view As DataGridView
     Friend WithEvents reset_btn As Button
@@ -486,7 +460,6 @@ Partial Class Header_Transaction
     Friend WithEvents Estimation As Label
     Friend WithEvents estimation_label As Label
     Friend WithEvents price_label As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents add_btn As Button
     Friend WithEvents DateTimePicker2 As DateTimePicker
 End Class
