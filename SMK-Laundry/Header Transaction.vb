@@ -67,7 +67,7 @@ Public Class Header_Transaction
     End Sub
     Sub kondisiawal()
         Call semikosong()
-        query = "select e.id'ID Header',b.id, a.name_service,a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b,unit d,header_transaction e where b.id_service=a.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
+        query = "select e.id'ID Header',e.id_customer,b.id, a.name_service,a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b,unit d,header_transaction e where b.id_service=a.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
         datagrid_view.DataSource = read(query)
         Call delete_btn()
     End Sub
@@ -175,7 +175,6 @@ Public Class Header_Transaction
             depo_btn.Enabled = False
             add_btn.Enabled = True
             Call remove()
-            Call kondisiawal()
 
         End If
 
@@ -185,7 +184,7 @@ Public Class Header_Transaction
 
 
     Private Sub add_btn_Click(sender As Object, e As EventArgs) Handles add_btn.Click
-        Call remove()
+
         If name_label.Text = "" Or
                 total_box.Text = "" Then
 
@@ -197,6 +196,7 @@ Public Class Header_Transaction
             MsgBox("Header berhasila", MsgBoxStyle.Information, "Berhasil")
             Call estimation1()
             Call price1()
+            Call remove()
             Call kondisiawal()
         End If
     End Sub

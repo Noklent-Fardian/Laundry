@@ -44,9 +44,9 @@ Public Class View_transaction
     Private Sub search_box_TextChanged(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
         If e.KeyChar = Chr(13) Then
             Call removebtn()
-            query = "select a.id 'Deposit Id',b.name_customer 'name',c.name_employee 'Employee Name',e.name_service'Service Name',d.id_prepaid_transaction,d.price_detail_transaction,d.total_unit_transaction,a.transaction_date_time_header_transaction,d.completed_datetime_detail_transaction from header_transaction a,customer b,employee c,detail_transaction d,service e where a.id_customer=b.id and a.id=d.id_header_transactionr and a.id_employee=c.id and d.id_service=e.id and b.name_customer like '%" & search_box.Text & "%' "
+            query = "select a.id ,a.id_customer,b.name_customer,c.name_employee,a.transaction_date_time_header_transaction,a.complete_estimation_date_time_header_transaction from header_transaction a,customer b, employee c where b.id=a.id_customer and c.id=a.id_employee and b.name_customer like '%" & search_box.Text & "%' "
             datagrid_view.DataSource = read(query)
-            Call completebtn()
+            Call select_btn()
 
 
         End If
@@ -64,6 +64,15 @@ Public Class View_transaction
         Call select_btn()
 
     End Sub
+
+    Private Sub datadrid_view2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datadrid_view2.CellContentClick
+
+    End Sub
+
+    Private Sub search_box_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
     Sub kosong()
         id_box.Text = ""
         search_box.Text = ""
