@@ -4,7 +4,7 @@ Public Class Header_Transaction
     Dim conn As SqlConnection
     Dim cmd As SqlCommand
     Dim dr As SqlDataReader
-    Dim query, id_service, id_customer, id_header, price_detail, duration As String
+    Dim query, id_service, id_customer, id_header, duration As String
 
 
     Sub koneksi()
@@ -40,7 +40,7 @@ Public Class Header_Transaction
         datagrid_view.Columns.Add(delete)
     End Sub
     Sub remove()
-        datagrid_view.Columns.RemoveAt(5)
+        datagrid_view.Columns.RemoveAt(7)
 
     End Sub
     Sub estimation1()
@@ -57,17 +57,16 @@ Public Class Header_Transaction
     End Sub
     Sub price1()
         Call koneksi()
-        query = "select  a.price_unit_service*b.total_unit_transaction as total from service a, detail_transaction b, header_transaction c where b.id_service=a.id and b.id_header_transactionr=c.id and c.id_customer='" & id_customer & "'"
-        cmd = New SqlCommand(query, conn)
-        dr = cmd.ExecuteReader
-        dr.Read()
-        price_detail = dr.Item("total")
-        price_label.Text = price_detail
+        Dim colsum As Decimal
+        For Each R As DataGridViewRow In datagrid_view.Rows
+            colsum += R.Cells(6).Value
+        Next
+        price_label.Text = colsum
 
     End Sub
     Sub kondisiawal()
         Call semikosong()
-        query = "select e.id'ID Header',e.id_customer,b.id, a.name_service,a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b,unit d,header_transaction e where b.id_service=a.id and a.id_unit=d.id and e.id_customer='" & id_customer & "'"
+        query = "select e.id'ID Header',e.id_customer,b.id, a.name_service,a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b,unit d,header_transaction e where b.id_service=a.id and a.id_unit=d.id and b.id_header_transactionr=e.id and e.id_customer='" & id_customer & "'"
         datagrid_view.DataSource = read(query)
         Call delete_btn()
     End Sub
@@ -175,6 +174,7 @@ Public Class Header_Transaction
             depo_btn.Enabled = False
             add_btn.Enabled = True
             Call remove()
+            Call kondisiawal()
 
         End If
 
@@ -195,9 +195,11 @@ Public Class Header_Transaction
             aksi(query)
             MsgBox("Header berhasila", MsgBoxStyle.Information, "Berhasil")
             Call estimation1()
-            Call price1()
             Call remove()
+
             Call kondisiawal()
+            Call price1()
+
         End If
     End Sub
 
