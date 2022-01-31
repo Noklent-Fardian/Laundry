@@ -31,12 +31,18 @@ Public Class View_transaction
     Sub removebtn()
         datagrid_view.Columns.RemoveAt(6)
     End Sub
+    Sub remove2()
+        datadrid_view2.Columns.RemoveAt(7)
+    End Sub
     Sub kondisiawal()
         GroupBox2.Hide()
         query = "select a.id ,a.id_customer,b.name_customer,c.name_employee,a.transaction_date_time_header_transaction,a.complete_estimation_date_time_header_transaction from header_transaction a,customer b, employee c where b.id=a.id_customer and c.id=a.id_employee"
         datagrid_view.DataSource = read(query)
         datagrid_view.AllowUserToAddRows = False
         Call select_btn()
+        query2 = "select a.id,b.name_service,a.id_prepaid_transaction,a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price',a.completed_datetime_detail_transaction from detail_transaction a, service b where b.id=a.id_service and a.id_header_transactionr ='" & datagrid_view.CurrentRow.Cells(0).Value & "'"
+        datadrid_view2.DataSource = read(query2)
+        Call completebtn()
 
 
     End Sub
@@ -56,9 +62,12 @@ Public Class View_transaction
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
         id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
         If e.ColumnIndex = 6 Then
+            Call remove2()
             query2 = "select a.id,b.name_service,a.id_prepaid_transaction,a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price',a.completed_datetime_detail_transaction from detail_transaction a, service b where b.id=a.id_service and a.id_header_transactionr ='" & datagrid_view.CurrentRow.Cells(0).Value & "'"
             datadrid_view2.DataSource = read(query2)
             GroupBox2.Show()
+            Call completebtn()
+
         End If
         Call removebtn()
         Call select_btn()
@@ -66,7 +75,15 @@ Public Class View_transaction
     End Sub
 
     Private Sub datadrid_view2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datadrid_view2.CellContentClick
-
+        id_detail_box.Text = datadrid_view2.CurrentRow.Cells(0).Value
+        If e.ColumnIndex = 7 Then
+            query2 = "update detail_transaction set completed_datetime_detail_transaction='" & DateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm") & "' where id='" & id_detail_box.Text & "'"
+            aksi(query2)
+            Call remove2()
+            query = "select a.id,b.name_service,a.id_prepaid_transaction,a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price',a.completed_datetime_detail_transaction from detail_transaction a, service b where b.id=a.id_service and a.id_header_transactionr ='" & id_detail_box.Text & "'"
+            datadrid_view2.DataSource = read(query)
+            Call completebtn()
+        End If
     End Sub
 
     Private Sub search_box_TextChanged(sender As Object, e As EventArgs)
@@ -80,6 +97,7 @@ Public Class View_transaction
 
     Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
         Call removebtn()
+        Call remove2()
         Call kondisiawal()
     End Sub
 

@@ -69,6 +69,7 @@ Public Class Header_Transaction
         query = "select e.id'ID Header',e.id_customer,b.id, a.name_service,a.price_unit_service,b.total_unit_transaction,a.price_unit_service*b.total_unit_transaction'Total' from service a, detail_transaction b,unit d,header_transaction e where b.id_service=a.id and a.id_unit=d.id and b.id_header_transactionr=e.id and e.id_customer='" & id_customer & "'"
         datagrid_view.DataSource = read(query)
         Call delete_btn()
+        Call price1()
     End Sub
 
     Private Sub Header_Transaction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -99,6 +100,12 @@ Public Class Header_Transaction
     End Sub
 
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
+        If e.ColumnIndex = 7 Then
+            query = "delete detail_transaction where id='" & datagrid_view.CurrentRow.Cells(2).Value & "'"
+            aksi(query)
+            Call remove()
+            Call kondisiawal()
+        End If
 
     End Sub
 
@@ -143,11 +150,14 @@ Public Class Header_Transaction
     End Sub
 
     Private Sub submit_btn_Click(sender As Object, e As EventArgs) Handles submit_btn.Click
-        If total_box.Text = "" Or
-            Phone_box.Text = "" Or
+        If Phone_box.Text = "" Or
             name_label.Text = "" Then
             MsgBox("Isi semua Kolom", MsgBoxStyle.Information, "Belum Lengkap")
         Else
+            query = "update header_transaction set complete_estimation_date_time_header_transaction='" & estimation_label.Text & "' where id='" & id_box.Text & "'"
+            aksi(query)
+            View_transaction.Show()
+            Me.Close()
             Call submit()
 
         End If
@@ -198,7 +208,6 @@ Public Class Header_Transaction
             Call remove()
 
             Call kondisiawal()
-            Call price1()
 
         End If
     End Sub
