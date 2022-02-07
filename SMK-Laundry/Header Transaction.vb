@@ -83,6 +83,8 @@ Public Class Header_Transaction
         id_box.Text = ""
         add_btn.Enabled = False
         depo_btn.Enabled = True
+        submit_btn.Enabled = False
+
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -157,7 +159,8 @@ Public Class Header_Transaction
             query = "update header_transaction set complete_estimation_date_time_header_transaction='" & estimation_label.Text & "' where id='" & id_box.Text & "'"
             aksi(query)
             View_transaction.Show()
-            Me.Close()
+            Call remove()
+            Me.Hide()
             Call submit()
 
         End If
@@ -185,6 +188,7 @@ Public Class Header_Transaction
             add_btn.Enabled = True
             Call remove()
             Call kondisiawal()
+            submit_btn.Enabled = True
 
         End If
 
