@@ -90,7 +90,7 @@ Public Class Manage_Employee
             salary_box.Text = "" Then
             MsgBox("Semua kolom harus diisi", MsgBoxStyle.Information, "Kurang kengkap")
         ElseIf password_box.Text <> confirm_box.Text Then
-            MsgBox("Password tidak sama", MsgBoxStyle.Information, "Harus beda")
+            MsgBox("Password tidak sama", MsgBoxStyle.Information, "Harus sama")
             password_box.Text = ""
             confirm_box.Text = ""
         ElseIf id_box.Text = "" Then
@@ -156,23 +156,9 @@ Public Class Manage_Employee
         End If
     End Sub
 
-    Private Sub DateTimePicker2_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker2.ValueChanged
-
-    End Sub
-
-
-
-    Private Sub search_box_TextChanged(sender As Object, e As EventArgs) Handles search_box.TextChanged
-
-    End Sub
-
     Private Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
         Call remove_bt()
         Call kondisiawal()
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 
