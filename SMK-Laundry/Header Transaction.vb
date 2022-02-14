@@ -45,13 +45,13 @@ Public Class Header_Transaction
     End Sub
     Sub estimation1()
         Call koneksi()
-        query = "select dateadd(day,a.estimation_duration_service,b.transaction_date_time_header_transaction) as coba from service a,header_transaction b, detail_transaction c where c.id_service=a.id and c.id_header_transactionr=b.id and b.id_customer='" & id_customer & "'"
+        query = "select top (1) dateadd(day,a.estimation_duration_service,b.transaction_date_time_header_transaction) as coba from service a,header_transaction b, detail_transaction c where c.id_service=a.id and c.id_header_transactionr=b.id order by c.id desc"
         cmd = New SqlCommand(query, conn)
         dr = cmd.ExecuteReader
         dr.Read()
         duration = dr.Item("coba")
         DateTimePicker2.Value = duration
-        estimation_label.Text = DateTimePicker2.Value
+        estimation_label.Text = DateTimePicker2.Value.ToString("yyyy/MM/dd hh:mm")
 
 
     End Sub
