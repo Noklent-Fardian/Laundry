@@ -49,9 +49,11 @@ Public Class Header_Transaction
         cmd = New SqlCommand(query, conn)
         dr = cmd.ExecuteReader
         dr.Read()
-        duration = dr.Item("coba")
-        DateTimePicker2.Value = duration
-        estimation_label.Text = DateTimePicker2.Value.ToString("yyyy/MM/dd hh:mm")
+        If dr.HasRows Then
+            duration = dr.Item("coba")
+            DateTimePicker2.Value = duration
+            estimation_label.Text = DateTimePicker2.Value.ToString("yyyy/MM/dd hh:mm")
+        End If
 
 
     End Sub

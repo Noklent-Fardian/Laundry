@@ -86,7 +86,7 @@ Partial Class View_transaction
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.datagrid_view.DefaultCellStyle = DataGridViewCellStyle2
         Me.datagrid_view.GridColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.datagrid_view.Location = New System.Drawing.Point(6, 18)
+        Me.datagrid_view.Location = New System.Drawing.Point(10, 18)
         Me.datagrid_view.Name = "datagrid_view"
         Me.datagrid_view.ReadOnly = True
         Me.datagrid_view.RowHeadersWidth = 51
@@ -186,7 +186,6 @@ Partial Class View_transaction
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.datagrid_view)
-        Me.GroupBox1.Controls.Add(Me.id_box)
         Me.GroupBox1.Location = New System.Drawing.Point(2, 180)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1165, 252)
@@ -196,15 +195,14 @@ Partial Class View_transaction
         '
         'id_box
         '
-        Me.id_box.Location = New System.Drawing.Point(1027, 39)
+        Me.id_box.Location = New System.Drawing.Point(793, 41)
         Me.id_box.Name = "id_box"
-        Me.id_box.Size = New System.Drawing.Size(11, 22)
+        Me.id_box.Size = New System.Drawing.Size(76, 22)
         Me.id_box.TabIndex = 50
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.datadrid_view2)
-        Me.GroupBox2.Controls.Add(Me.id_detail_box)
         Me.GroupBox2.Location = New System.Drawing.Point(2, 438)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(1165, 252)
@@ -246,7 +244,7 @@ Partial Class View_transaction
         '
         'id_detail_box
         '
-        Me.id_detail_box.Location = New System.Drawing.Point(458, 115)
+        Me.id_detail_box.Location = New System.Drawing.Point(275, 42)
         Me.id_detail_box.Name = "id_detail_box"
         Me.id_detail_box.Size = New System.Drawing.Size(248, 22)
         Me.id_detail_box.TabIndex = 52
@@ -257,7 +255,9 @@ Partial Class View_transaction
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.MediumAquamarine
         Me.ClientSize = New System.Drawing.Size(1165, 735)
+        Me.Controls.Add(Me.id_detail_box)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.id_box)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DateTimePicker1)
@@ -270,9 +270,7 @@ Partial Class View_transaction
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         CType(Me.datadrid_view2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

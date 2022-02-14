@@ -47,23 +47,11 @@ Public Class View_transaction
 
     End Sub
 
-    Private Sub search_box_TextChanged(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
-        If e.KeyChar = Chr(13) Then
-            Call removebtn()
-            query = "select a.id ,a.id_customer,b.name_customer,c.name_employee,a.transaction_date_time_header_transaction,a.complete_estimation_date_time_header_transaction from header_transaction a,customer b, employee c where b.id=a.id_customer and c.id=a.id_employee and b.name_customer like '%" & search_box.Text & "%' "
-            datagrid_view.DataSource = read(query)
-            Call select_btn()
-
-
-        End If
-
-    End Sub
-
     Private Sub datagrid_view_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles datagrid_view.CellContentClick
         id_box.Text = datagrid_view.CurrentRow.Cells(0).Value
         If e.ColumnIndex = 6 Then
             Call remove2()
-            query2 = "select a.id,b.name_service,a.id_prepaid_transaction,a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price',a.completed_datetime_detail_transaction from detail_transaction a, service b where b.id=a.id_service and a.id_header_transactionr ='" & datagrid_view.CurrentRow.Cells(0).Value & "'"
+            query2 = "select a.id,b.name_service,a.id_prepaid_transaction,a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price',a.completed_datetime_detail_transaction from detail_transaction a, service b where b.id=a.id_service and a.id_header_transactionr ='" & id_box.Text & "'"
             datadrid_view2.DataSource = read(query2)
             GroupBox2.Show()
             Call completebtn()
@@ -80,10 +68,21 @@ Public Class View_transaction
             query2 = "update detail_transaction set completed_datetime_detail_transaction='" & DateTimePicker1.Value.ToString("yyyy-MM-dd hh:mm") & "' where id='" & id_detail_box.Text & "'"
             aksi(query2)
             Call remove2()
-            query = "select a.id,b.name_service,a.id_prepaid_transaction,a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price',a.completed_datetime_detail_transaction from detail_transaction a, service b where b.id=a.id_service and a.id_header_transactionr ='" & id_detail_box.Text & "'"
+            query = "select a.id,b.name_service,a.id_prepaid_transaction,a.price_detail_transaction,a.total_unit_transaction,a.price_detail_transaction*a.total_unit_transaction 'Total price',a.completed_datetime_detail_transaction from detail_transaction a, service b where b.id=a.id_service and a.id_header_transactionr ='" & id_box.Text & "'"
             datadrid_view2.DataSource = read(query)
             Call completebtn()
         End If
+    End Sub
+    Private Sub search_box_TextChanged(sender As Object, e As KeyPressEventArgs) Handles search_box.KeyPress
+        If e.KeyChar = Chr(13) Then
+            Call removebtn()
+            query = "select a.id ,a.id_customer,b.name_customer,c.name_employee,a.transaction_date_time_header_transaction,a.complete_estimation_date_time_header_transaction from header_transaction a,customer b, employee c where b.id=a.id_customer and c.id=a.id_employee and b.name_customer like '%" & search_box.Text & "%' "
+            datagrid_view.DataSource = read(query)
+            Call select_btn()
+
+
+        End If
+
     End Sub
 
     Private Sub search_box_TextChanged(sender As Object, e As EventArgs)
