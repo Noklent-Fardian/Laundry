@@ -35,7 +35,6 @@ Public Class View_transaction
         datadrid_view2.Columns.RemoveAt(7)
     End Sub
     Sub kondisiawal()
-        GroupBox2.Hide()
         query = "select a.id ,a.id_customer,b.name_customer,c.name_employee,a.transaction_date_time_header_transaction,a.complete_estimation_date_time_header_transaction from header_transaction a,customer b, employee c where b.id=a.id_customer and c.id=a.id_employee"
         datagrid_view.DataSource = read(query)
         datagrid_view.AllowUserToAddRows = False
@@ -100,14 +99,13 @@ Public Class View_transaction
         Call kondisiawal()
     End Sub
 
-
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MainMenu.Show()
         Me.Hide()
     End Sub
 
     Private Sub View_transaction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        GroupBox2.Hide()
         Call kondisiawal()
     End Sub
 End Class
